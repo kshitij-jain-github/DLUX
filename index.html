@@ -1,0 +1,2694 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DLUX Media — Wedding Photographer & Videographer in Delhi NCR | Candid Photography</title>
+  <meta name="description"
+    content="DLUX Media is Delhi NCR's trusted wedding photographer and videographer. We capture your real moments — the laughter, the tears, the love. Serving Delhi, Gurgaon, Noida, Ghaziabad & all of India.">
+  <meta name="keywords"
+    content="wedding photographer Delhi, wedding videographer Delhi NCR, candid wedding photography, pre-wedding shoot Delhi, wedding cinematography Gurgaon, best wedding photographer Noida, wedding films Delhi, DLUX Media">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="DLUX Media Services">
+  <link rel="canonical" href="https://dluxmedia.in/">
+  <meta property="og:title" content="DLUX Media — Your Story, Beautifully Told">
+  <meta property="og:description"
+    content="Award-winning wedding photography & cinematic films in Delhi NCR. Candid, emotional, and real.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dluxmedia.in/">
+  <meta property="og:image" content="https://dluxmedia.in/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "DLUX Media Services",
+    "description": "Premium wedding photography and cinematography studio in Delhi NCR",
+    "telephone": "+918851638940",
+    "email": "studiosdream.in@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Delhi",
+      "addressRegion": "Delhi NCR",
+      "addressCountry": "IN"
+    },
+    "areaServed": ["Delhi", "Gurgaon", "Noida", "Ghaziabad", "Faridabad"],
+    "url": "https://dluxmedia.in",
+    "sameAs": ["https://instagram.com/dluxmedia"]
+  }
+  </script>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Lato:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F5F0E8',
+            'cream-dk': '#EDE6D6',
+            ink: '#1A1209',
+            'ink-soft': '#2E2416',
+            gold: '#C9A84C',
+            'gold-lt': '#DFC07A',
+            'gold-dk': '#A07A28',
+            muted: '#6B5B3E',
+            border: '#DDD0B5'
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            body: ['Lato', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #C9A84C;
+      --ink: #1A1209;
+      --cream: #F5F0E8;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: #6B5B3E;
+      font-family: 'Lato', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #F5F0E8;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #C9A84C;
+      border-radius: 3px;
+    }
+
+    .font-display {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .font-body {
+      font-family: 'Lato', sans-serif;
+    }
+
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #C9A84C 0%, #DFC07A 40%, #C9A84C 70%, #A07A28 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #loader {
+      background: var(--ink);
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .ken-burns {
+      animation: kbAnim 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes kbAnim {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    .hero-slide {
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* NAVBAR */
+
+    #navbar {
+      transition:
+        background 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+    }
+
+    /* AFTER SCROLL */
+
+    #navbar.scrolled {
+      background: rgba(245, 240, 232, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 2px 20px rgba(26, 18, 9, 0.08);
+      border-bottom: 1px solid #DDD0B5;
+    }
+
+    /* NAV LINKS */
+
+    .nav-link {
+      position: relative;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    /* LINK HOVER */
+
+    .nav-link:hover {
+      color: #C9A84C;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #C9A84C;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* CHANGE LINK COLOR ON SCROLL */
+
+    #navbar.scrolled .nav-link {
+      color: #1A1209;
+    }
+
+    #navbar.scrolled .nav-link:hover {
+      color: #C9A84C;
+    }
+
+    /* HAMBURGER COLOR CHANGE */
+
+    #navbar.scrolled #hb1,
+    #navbar.scrolled #hb2,
+    #navbar.scrolled #hb3 {
+      background: #1A1209;
+    }
+
+    .gold-line {
+      display: inline-block;
+      width: 48px;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, #C9A84C, #DFC07A, #C9A84C);
+      background-size: 200% auto;
+      color: #1A1209;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 60px;
+      transition: background-position 0.4s ease, box-shadow 0.4s ease, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn-gold:hover {
+      background-position: right center;
+      box-shadow: 0 8px 32px rgba(201, 168, 76, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 34px;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 60px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline:hover {
+      border-color: #C9A84C;
+      color: #C9A84C;
+    }
+
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 36px;
+      background: #1A1209;
+      color: #F5F0E8;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 60px;
+      border: 1.5px solid #1A1209;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-dark:hover {
+      background: #C9A84C;
+      color: #1A1209;
+      border-color: #C9A84C;
+    }
+
+    .img-hover-zoom {
+      overflow: hidden;
+    }
+
+    .img-hover-zoom img {
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .img-hover-zoom:hover img {
+      transform: scale(1.06);
+    }
+
+    .testimonial-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      min-height: 380px;
+    }
+
+    .testimonial-card .bg-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.28) saturate(0.4);
+      transition: transform 0.6s ease;
+    }
+
+    .testimonial-card:hover .bg-img {
+      transform: scale(1.04);
+    }
+
+    .testimonial-card .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26, 18, 9, 0.7) 0%, rgba(201, 168, 76, 0.15) 100%);
+    }
+
+    .testimonial-card .content {
+      position: relative;
+      z-index: 2;
+      padding: 40px 36px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .step-num {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid #C9A84C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #C9A84C;
+      background: #F5F0E8;
+    }
+
+    .ig-card {
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+    }
+
+    .ig-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px rgba(26, 18, 9, 0.18);
+    }
+
+    #mobileMenu {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    @keyframes gentleBounce {
+
+      0%,
+      100% {
+        transform: translateY(0) translateX(-50%);
+      }
+
+      50% {
+        transform: translateY(-6px) translateX(-50%);
+      }
+    }
+
+    .gentle-bounce {
+      animation: gentleBounce 2.5s infinite;
+    }
+
+    #cookieBanner {
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #cookieBanner.show {
+      transform: translateY(0);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 20px;
+      background: #EDE6D6;
+      border: 1.5px solid #DDD0B5;
+      border-radius: 50px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      color: #1A1209;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-input:focus {
+      border-color: #C9A84C;
+    }
+
+    .form-textarea {
+      border-radius: 16px !important;
+      resize: none;
+    }
+
+    footer a {
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #C9A84C;
+    }
+
+    @media (max-width: 640px) {
+      .testimonial-card .content {
+        padding: 28px 22px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       REDESIGNED PORTFOLIO SECTION STYLES
+    ════════════════════════════════════════════ */
+
+    /* Event tab pills */
+    .event-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 1.5px solid #DDD0B5;
+      border-radius: 60px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6B5B3E;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .event-tab:hover {
+      border-color: #C9A84C;
+      color: #C9A84C;
+    }
+
+    .event-tab.active {
+      background: #1A1209;
+      border-color: #1A1209;
+      color: #F5F0E8;
+    }
+
+    .event-tab .tab-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.2);
+      color: #C9A84C;
+      font-size: 0.65rem;
+      font-weight: 800;
+    }
+
+    .event-tab.active .tab-count {
+      background: rgba(201, 168, 76, 0.25);
+    }
+
+    /* Event gallery panels */
+    .event-panel {
+      display: none;
+    }
+
+    .event-panel.active {
+      display: block;
+    }
+
+    /* Event header strip */
+    .event-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 28px;
+      background: #1A1209;
+      border-radius: 16px 16px 0 0;
+      margin-bottom: 0;
+    }
+
+    .event-header-info h3 {
+      font-family: 'Playfair Display', serif;
+      color: #F5F0E8;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 2px 0;
+    }
+
+    .event-header-info span {
+      font-family: 'Lato', sans-serif;
+      color: rgba(201, 168, 76, 0.75);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    .event-photo-count {
+      font-family: 'Playfair Display', serif;
+      color: #C9A84C;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .event-photo-count small {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 232, 0.4);
+      display: block;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+
+    /* Masonry photo grid */
+    .photo-grid {
+      display: grid;
+      gap: 6px;
+      background: #1A1209;
+      border-radius: 0 0 16px 16px;
+      padding: 6px;
+    }
+
+    /* Portrait-heavy events: 3 col with auto rows */
+    .photo-grid-mixed {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Landscape-heavy: 2 col */
+    .photo-grid-landscape {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Single: 1 col */
+    .photo-grid-single {
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 640px) {
+      .photo-grid-mixed {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photo-grid-landscape {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .photo-cell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #2E2416;
+    }
+
+    .photo-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .photo-cell:hover img {
+      transform: scale(1.05);
+    }
+
+    .photo-cell .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 18, 9, 0.75) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 14px;
+      border-radius: 8px;
+    }
+
+    .photo-cell:hover .photo-overlay {
+      opacity: 1;
+    }
+
+    .photo-cell .photo-overlay svg {
+      width: 22px;
+      height: 22px;
+      color: #C9A84C;
+    }
+
+    /* Portrait cell */
+    .photo-cell.portrait {
+      aspect-ratio: 2/3;
+    }
+
+    /* Landscape cell */
+    .photo-cell.landscape {
+      aspect-ratio: 3/2;
+    }
+
+    /* Wide cell spanning 2 cols in landscape grid */
+    .photo-cell.wide {
+      grid-column: span 2;
+      aspect-ratio: 16/7;
+    }
+
+    /* Tall cell spanning 2 rows */
+    .photo-cell.tall {
+      grid-row: span 2;
+    }
+
+    /* Inline lightbox for portfolio */
+    #portfolioLightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 18, 9, 0.97);
+      backdrop-filter: blur(12px);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    #portfolioLightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #portfolioLightbox .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #portfolioLightbox #lbMainImg {
+      max-width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+    }
+
+    .lb-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: #C9A84C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 2;
+    }
+
+    .lb-nav-btn:hover {
+      background: rgba(201, 168, 76, 0.3);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lb-nav-btn.prev {
+      left: -60px;
+    }
+
+    .lb-nav-btn.next {
+      right: -60px;
+    }
+
+    @media (max-width: 768px) {
+      .lb-nav-btn.prev {
+        left: 8px;
+      }
+
+      .lb-nav-btn.next {
+        right: 8px;
+      }
+    }
+
+    .lb-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(245, 240, 232, 0.08);
+      border: none;
+      color: #F5F0E8;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lb-close-btn:hover {
+      background: rgba(201, 168, 76, 0.2);
+      color: #C9A84C;
+    }
+
+    .lb-caption {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .lb-caption .lb-event-name {
+      font-family: 'Playfair Display', serif;
+      color: #F5F0E8;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .lb-caption .lb-counter {
+      font-family: 'Lato', sans-serif;
+      color: rgba(201, 168, 76, 0.7);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+
+    /* Filmstrip thumbnails */
+    .lb-strip {
+      display: flex;
+      gap: 6px;
+      margin-top: 14px;
+      max-width: min(90vw, 700px);
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: #C9A84C transparent;
+    }
+
+    .lb-strip::-webkit-scrollbar {
+      height: 3px;
+    }
+
+    .lb-strip::-webkit-scrollbar-thumb {
+      background: #C9A84C;
+      border-radius: 2px;
+    }
+
+    .lb-strip-thumb {
+      flex-shrink: 0;
+      width: 52px;
+      height: 38px;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.2s, opacity 0.2s;
+      opacity: 0.55;
+    }
+
+    .lb-strip-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .lb-strip-thumb.active {
+      border-color: #C9A84C;
+      opacity: 1;
+    }
+
+    .lb-strip-thumb:hover {
+      opacity: 0.85;
+    }
+
+    /* "All Work" masonry — CSS columns */
+    .all-work-masonry {
+      columns: 3;
+      column-gap: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .all-work-masonry {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .all-work-masonry {
+        columns: 1;
+      }
+    }
+
+    .all-work-masonry .mitem {
+      break-inside: avoid;
+      margin-bottom: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      display: block;
+    }
+
+    .all-work-masonry .mitem img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .all-work-masonry .mitem:hover img {
+      transform: scale(1.04);
+    }
+
+    .all-work-masonry .mitem .mitem-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(26, 18, 9, 0.82), transparent);
+      padding: 24px 12px 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .all-work-masonry .mitem:hover .mitem-label {
+      opacity: 1;
+    }
+
+    .all-work-masonry .mitem .mitem-label span {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #DFC07A;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner"
+    class="fixed bottom-0 left-0 right-0 z-[99998] bg-ink/95 backdrop-blur-md border-t border-gold/20 px-4 sm:px-8 py-5">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="flex-1">
+        <p class="text-cream text-sm leading-relaxed font-body">
+          We use cookies to give you the best experience on our website.
+          <a href="#" class="text-gold underline underline-offset-2 hover:no-underline ml-1">Privacy
+            Policy</a>
+        </p>
+      </div>
+      <div class="flex gap-3 shrink-0">
+        <button onclick="rejectCookies()"
+          class="px-5 py-2.5 border border-cream/20 text-cream/70 text-xs font-body font-semibold uppercase tracking-wider rounded-full hover:border-cream/50 transition-colors">Decline</button>
+        <button onclick="acceptCookies()"
+          class="px-6 py-2.5 bg-gold text-ink text-xs font-body font-bold uppercase tracking-wider rounded-full hover:bg-gold-lt transition-colors">Accept
+          All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRELOADER -->
+  <div id="loader" class="fixed inset-0 z-[99999] flex flex-col items-center justify-center">
+    <div class="text-center flex flex-col items-center">
+      <div class="w-28 h-28 mb-6 relative">
+        <img src="Logo.png" alt="DLUX Media" class="w-full h-full object-contain opacity-90"
+          style="filter: drop-shadow(0 0 16px rgba(201,168,76,0.4));">
+        <div class="absolute -inset-3 border border-gold/30 border-t-gold rounded-full animate-spin"
+          style="animation-duration:2.2s;"></div>
+      </div>
+      <div class="overflow-hidden">
+        <p id="loaderBrand"
+          class="font-display text-gold text-3xl sm:text-4xl font-bold tracking-[0.2em] opacity-0 translate-y-8 transition-all duration-700">
+          DLUX MEDIA</p>
+      </div>
+      <p id="loaderTagline"
+        class="font-serif text-cream/50 text-sm italic tracking-[0.3em] mt-3 opacity-0 transition-opacity duration-700">
+        Your story. Every Occasion. Beautifully Told.</p>
+    </div>
+  </div>
+  <!-- navbar -->
+  <nav id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 py-4 px-5 sm:px-10 lg:px-16 flex items-center justify-between">
+
+    <a href="#hero" class="flex items-center gap-3 group shrink-0">
+      <img src="Logo.png" alt="DLUX Media Logo"
+        class="w-40 h-20 object-contain transition-transform duration-500 group-hover:scale-110">
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-8 xl:gap-10">
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+      <li><a href="#stories" class="nav-link">Our Work</a></li>
+      <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+      <li><a href="#process" class="nav-link">How We Work</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="hidden lg:flex btn-dark text-xs py-3 px-7">
+      Book Now
+    </a>
+
+    <button id="navToggle" class="lg:hidden flex flex-col justify-center gap-[5px] w-8 h-8 focus:outline-none"
+      aria-label="Menu">
+
+      <span id="hb1" class="block w-7 h-[1.5px] bg-white transition-all duration-300 origin-center"></span>
+
+      <span id="hb2" class="block w-5 h-[1.5px] bg-white transition-all duration-300 self-end"></span>
+
+      <span id="hb3" class="block w-7 h-[1.5px] bg-white transition-all duration-300 origin-center"></span>
+
+    </button>
+
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+    class="fixed inset-0 bg-ink z-[48] flex flex-col justify-center items-start px-10 sm:px-14 opacity-0 pointer-events-none -translate-y-4">
+    <ul class="flex flex-col gap-6 mb-10">
+      <li><a href="#services" onclick="closeMobile()"
+          class="font-display text-cream/80 text-3xl sm:text-4xl hover:text-gold transition-colors">Services</a>
+      </li>
+      <li><a href="#portfolio" onclick="closeMobile()"
+          class="font-display text-cream/80 text-3xl sm:text-4xl hover:text-gold transition-colors">Portfolio</a>
+      </li>
+      <li><a href="#stories" onclick="closeMobile()"
+          class="font-display text-cream/80 text-3xl sm:text-4xl hover:text-gold transition-colors">Our
+          Work</a></li>
+      <li><a href="#testimonials" onclick="closeMobile()"
+          class="font-display text-cream/80 text-3xl sm:text-4xl hover:text-gold transition-colors">Reviews</a>
+      </li>
+      <li><a href="#contact" onclick="closeMobile()"
+          class="font-display text-cream/80 text-3xl sm:text-4xl hover:text-gold transition-colors">Contact</a>
+      </li>
+    </ul>
+    <a href="#contact" onclick="closeMobile()" class="btn-gold w-full sm:w-auto text-center">Book a Consultation</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="hero-slide absolute inset-0 opacity-100">
+        <img class="w-full h-full object-cover ken-burns" src="images/Deepak - 1 /DSC00558.jpg"
+          alt="Wedding photography Delhi NCR">
+      </div>
+      <div class="hero-slide absolute inset-0 opacity-0">
+        <img class="w-full h-full object-cover ken-burns" src="images/Mohit Wedding - 1/YUG_8135.jpg"
+          alt="Candid wedding photographer India">
+      </div>
+      <div class="hero-slide absolute inset-0 opacity-0">
+        <img class="w-full h-full object-cover ken-burns" src="images/Vipransh and Anjali - 1/0M1A8664.jpg"
+          alt="Pre-wedding shoot Delhi">
+      </div>
+      <div class="absolute inset-0"
+        style="background: linear-gradient(to top, rgba(26,18,9,0.85) 0%, rgba(26,18,9,0.45) 50%, rgba(26,18,9,0.2) 100%);">
+      </div>
+    </div>
+    <div
+      class="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-10 lg:px-16 pt-28 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+      <div class="lg:col-span-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="gold-line"></span>
+          <span class="font-body text-gold text-xs uppercase tracking-[0.2em] font-semibold">Delhi NCR · Pan
+            India Coverage</span>
+        </div>
+        <h1 class="font-display text-white font-bold mb-6"
+          style="font-size: clamp(2.6rem, 5.5vw, 5rem); line-height: 1.08; letter-spacing: -0.01em;">
+          Every Smile.<br>Every Tear.<br>
+          <span class="italic font-normal" style="color: #DFC07A;">Beautifully Saved.</span>
+        </h1>
+        <p class="font-body text-white/75 text-lg leading-relaxed max-w-lg mb-10">
+          We are wedding photographers and filmmakers based in Delhi NCR. We don't just take photos — we
+          capture the moments your heart will replay forever.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-14">
+          <a href="#contact" class="btn-gold">Book Your Date</a>
+          <a href="#portfolio" class="btn-outline">See Our Work</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-white/15 pt-8">
+          <div>
+            <p class="font-display text-gold font-bold text-3xl sm:text-4xl mb-1">500+</p>
+            <p class="font-body text-white/55 text-xs uppercase tracking-widest">Weddings Covered</p>
+          </div>
+          <div>
+            <p class="font-display text-gold font-bold text-3xl sm:text-4xl mb-1">8+</p>
+            <p class="font-body text-white/55 text-xs uppercase tracking-widest">Years Experience</p>
+          </div>
+          <div>
+            <p class="font-display text-gold font-bold text-3xl sm:text-4xl mb-1">NCR</p>
+            <p class="font-body text-white/55 text-xs uppercase tracking-widest">Home Base</p>
+          </div>
+          <div>
+            <p class="font-display text-gold font-bold text-3xl sm:text-4xl mb-1">4K</p>
+            <p class="font-body text-white/55 text-xs uppercase tracking-widest">Cinema Quality</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-4 flex flex-col items-start lg:items-end gap-5">
+        <div class="bg-ink/80 backdrop-blur-md border border-gold/25 rounded-2xl p-5 sm:p-6 max-w-xs w-full">
+          <div class="flex gap-1 text-gold text-sm mb-3">★★★★★</div>
+          <p class="font-serif text-cream/90 text-base sm:text-lg italic leading-snug mb-3">"They captured
+            moments even we didn't notice. Every photo tells a story."</p>
+          <span class="font-body text-cream/45 text-xs uppercase tracking-widest">— Priya & Rahul Sharma,
+            Delhi</span>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="goSlide(0)" class="slide-dot w-10 h-1 bg-gold rounded-full transition-all"></button>
+          <button onclick="goSlide(1)" class="slide-dot w-7 h-1 bg-white/30 rounded-full transition-all"></button>
+          <button onclick="goSlide(2)" class="slide-dot w-7 h-1 bg-white/30 rounded-full transition-all"></button>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-6 left-1/2 gentle-bounce z-10 flex flex-col items-center gap-2 pointer-events-none">
+      <span class="font-body text-gold/70 text-xs uppercase tracking-[0.25em]">Scroll</span>
+      <svg class="w-4 h-4 text-gold/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- TAGLINE STRIP -->
+  <div class="bg-ink py-6 overflow-hidden">
+    <div class="flex items-center justify-center gap-8 sm:gap-16 flex-wrap px-6 text-center">
+      <span class="font-serif text-gold italic text-lg sm:text-xl">Your story.</span>
+      <span class="hidden sm:block text-gold/30 text-2xl">·</span>
+      <span class="font-serif text-gold italic text-lg sm:text-xl">Every occasion.</span>
+      <span class="hidden sm:block text-gold/30 text-2xl">·</span>
+      <span class="font-serif text-gold italic text-lg sm:text-xl">Beautifully told.</span>
+    </div>
+  </div>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="py-20 md:py-32 bg-cream-dk">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
+        <div class="max-w-2xl reveal">
+          <p class="font-body text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-4">What We Do</p>
+          <h2 class="font-display text-ink font-bold" style="font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.15;">
+            We Cover Every Part<br>of Your
+            Special Day</h2>
+        </div>
+        <p class="font-body text-muted text-base leading-relaxed max-w-sm reveal">From the morning rituals to
+          the last dance — we are there, quietly capturing every memory.</p>
+      </div>
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-14 border-b border-border pb-14 reveal">
+        <div class="lg:col-span-7 bg-white p-2.5 border border-border rounded-2xl shadow-sm img-hover-zoom">
+          <div class="aspect-video overflow-hidden rounded-xl relative bg-ink">
+            <img class="w-full h-full object-cover" src="images/Mohit Wedding - 1/YUG_7527.jpg"
+              alt="Cinematic wedding film Delhi NCR" loading="lazy">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-ink/70 to-transparent p-5">
+              <span class="font-body text-gold text-xs uppercase tracking-widest font-semibold">● Wedding
+                Film Package</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <p class="font-body text-gold text-xs uppercase tracking-widest font-semibold mb-3">01 — Wedding
+            Films</p>
+          <h3 class="font-display text-ink font-bold text-2xl sm:text-3xl mb-5">Cinematic Wedding Videos</h3>
+          <p class="font-body text-muted text-base leading-relaxed mb-7">We create short films that feel like
+            cinema. Multi-camera coverage, emotional storytelling, and beautiful colour grading — so you can
+            relive your wedding day again and again.</p>
+          <a href="#contact"
+            class="font-body text-gold text-sm font-bold uppercase tracking-wider hover:text-ink transition-colors">Enquire
+            Now →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12">
+        <div class="flex flex-col group reveal">
+          <div class="bg-white p-2.5 border border-border rounded-2xl shadow-sm mb-5 img-hover-zoom">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl bg-ink">
+              <img class="w-full h-full object-cover" src="images/Vipransh and Anjali - 1/0M1A8447.jpg"
+                alt="Candid wedding photography Delhi" loading="lazy">
+            </div>
+          </div>
+          <p class="font-body text-gold text-xs uppercase tracking-widest font-semibold mb-2">02 — Photography
+          </p>
+          <h4 class="font-display text-ink font-bold text-xl sm:text-2xl mb-3">Candid Wedding Photography</h4>
+          <p class="font-body text-muted text-sm leading-relaxed mb-5">Natural, unposed moments captured in
+            beautiful light. We blend into your wedding so nothing feels forced — only real emotions.</p>
+          <a href="#contact"
+            class="font-body text-gold text-sm font-bold uppercase tracking-wider hover:text-ink transition-colors">Book
+            Coverage →</a>
+        </div>
+        <div class="flex flex-col group reveal">
+          <div class="bg-white p-2.5 border border-border rounded-2xl shadow-sm mb-5 img-hover-zoom">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl bg-ink">
+              <img class="w-full h-full object-cover" src="images/Vishal Singh - 1/6K4A6032.jpg"
+                alt="Pre-wedding shoot Delhi Jaipur" loading="lazy">
+            </div>
+          </div>
+          <p class="font-body text-gold text-xs uppercase tracking-widest font-semibold mb-2">03 — Pre-Wedding
+          </p>
+          <h4 class="font-display text-ink font-bold text-xl sm:text-2xl mb-3">Pre-Wedding Shoots</h4>
+          <p class="font-body text-muted text-sm leading-relaxed mb-5">A dedicated shoot for just the two of
+            you — at a palace, a beach, or anywhere that means something to you. Stunning frames that tell
+            your love story.</p>
+          <a href="#contact"
+            class="font-body text-gold text-sm font-bold uppercase tracking-wider hover:text-ink transition-colors">Book
+            a Shoot →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+     PORTFOLIO SECTION — REDESIGNED WITH REAL CLIENT PHOTOS
+════════════════════════════════════════════ -->
+  <section id="portfolio" class="py-20 md:py-32 bg-cream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16">
+
+      <!-- Section header -->
+      <div class="mb-14 reveal">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div>
+            <p class="font-body text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-4">Portfolio
+            </p>
+            <h2 class="font-display text-ink font-bold"
+              style="font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.15;">
+              Real Weddings.<br>Real Moments.
+            </h2>
+          </div>
+          <p class="font-body text-muted text-base leading-relaxed max-w-sm">
+            Browse our work by event — click any photo to open the full gallery. Every image was shot by the
+            DLUX Media team.
+          </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-4 mt-8">
+          <div class="flex-1 h-px bg-border"></div>
+          <div class="w-2 h-2 rounded-full bg-gold"></div>
+          <div class="flex-1 h-px bg-border"></div>
+        </div>
+      </div>
+
+      <!-- Event Tab Navigation -->
+      <div class="flex flex-wrap gap-2 mb-10 reveal" id="eventTabs">
+        <button class="event-tab active" onclick="switchEvent(this, 'all')" data-event="all">
+          All Work <span class="tab-count">41</span>
+        </button>
+        <button class="event-tab" onclick="switchEvent(this, 'abhishek')" data-event="abhishek">
+          Abhishek Kapoor Wedding <span class="tab-count">13</span>
+        </button>
+        <button class="event-tab" onclick="switchEvent(this, 'lemontree')" data-event="lemontree">
+          Lemon Tree Event <span class="tab-count">15</span>
+        </button>
+        <button class="event-tab" onclick="switchEvent(this, 'vipransh')" data-event="vipransh">
+          Vipransh &amp; Anjali <span class="tab-count">12</span>
+        </button>
+        <button class="event-tab" onclick="switchEvent(this, 'deepak')" data-event="deepak">
+          Deepak's Event <span class="tab-count">1</span>
+        </button>
+      </div>
+
+      <!-- ── ALL WORK panel (masonry) ── -->
+      <div class="event-panel active" id="panel-all">
+        <div class="all-work-masonry">
+
+          <!-- Abhishek Kapoor Wedding photos -->
+          <div class="mitem" onclick="openLB('abhishek', 0)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 1)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0151.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 2)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9867.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 3)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0156.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 4)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9970.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+
+          <!-- Lemon Tree photos -->
+          <div class="mitem" onclick="openLB('lemontree', 0)">
+            <img src="images/Lemon Tree - 1/IMG_7147.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 1)">
+            <img src="images/Lemon Tree - 1/DPP_8646.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 2)">
+            <img src="images/Lemon Tree - 1/IMG_7180.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 3)">
+            <img src="images/Lemon Tree - 1/IMG_7209.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 4)">
+            <img src="images/Lemon Tree - 1/DPP_9108.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 5)">
+            <img src="images/Lemon Tree - 1/IMG_7234.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+
+          <!-- Vipransh & Anjali photos -->
+          <div class="mitem" onclick="openLB('vipransh', 0)">
+            <img src="images/Vipransh and Anjali - 1/0M1A7694.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 1)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8209.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 2)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8122.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 3)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8447.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 4)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8158.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 5)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8462.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 6)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8740.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+
+          <!-- Abhishek remaining -->
+          <div class="mitem" onclick="openLB('abhishek', 5)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0213.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 6)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9836.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+
+          <!-- Lemon Tree remaining -->
+          <div class="mitem" onclick="openLB('lemontree', 6)">
+            <img src="images/Lemon Tree - 1/IMG_7253.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 7)">
+            <img src="images/Lemon Tree - 1/IMG_7307.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 8)">
+            <img src="images/Lemon Tree - 1/IMG_7350.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+
+          <!-- Deepak -->
+          <div class="mitem" onclick="openLB('deepak', 0)">
+            <img src="images/Deepak - 1 /DSC01630.jpg" alt="Deepak Event" loading="lazy">
+            <div class="mitem-label"><span>Deepak's Event</span></div>
+          </div>
+
+          <!-- More Vipransh -->
+          <div class="mitem" onclick="openLB('vipransh', 7)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8545.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 8)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8635.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+
+          <!-- More Abhishek -->
+          <div class="mitem" onclick="openLB('abhishek', 7)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9842.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 8)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9853.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+
+          <!-- More Lemon Tree -->
+          <div class="mitem" onclick="openLB('lemontree', 9)">
+            <img src="images/Lemon Tree - 1/IMG_7358.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 10)">
+            <img src="images/Lemon Tree - 1/IMG_7487.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+
+          <!-- Final Abhishek + Vipransh -->
+          <div class="mitem" onclick="openLB('abhishek', 9)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9875.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 9)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8197.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 10)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9955.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 10)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8558.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 11)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9992.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 11)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8664.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 12)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9999.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 11)">
+            <img src="images/Lemon Tree - 1/IMG_7162.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 12)">
+            <img src="images/Lemon Tree - 1/IMG_7176.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 13)">
+            <img src="images/Lemon Tree - 1/IMG_7192.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('lemontree', 14)">
+            <img src="images/Lemon Tree - 1/IMG_7198.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="mitem-label"><span>Lemon Tree Event</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('vipransh', 3)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8209.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
+          </div>
+          <div class="mitem" onclick="openLB('abhishek', 0)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ABHISHEK KAPOOR WEDDING panel ── -->
+      <div class="event-panel" id="panel-abhishek">
+        <div class="event-header">
+          <div class="event-header-info">
+            <h3>Abhishek Kapoor Wedding</h3>
+            <span>Wedding · Delhi NCR</span>
+          </div>
+          <div class="text-right">
+            <div class="event-photo-count">13<small>photos</small></div>
+          </div>
+        </div>
+        <div class="photo-grid photo-grid-mixed">
+          <div class="photo-cell landscape" onclick="openLB('abhishek', 0)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 1)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0151.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 2)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0156.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('abhishek', 3)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9867.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 4)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9836.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 5)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9842.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 6)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9853.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 7)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9875.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 8)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9955.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('abhishek', 9)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9970.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 10)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9992.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 11)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9999.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('abhishek', 12)">
+            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0213.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LEMON TREE panel ── -->
+      <div class="event-panel" id="panel-lemontree">
+        <div class="event-header">
+          <div class="event-header-info">
+            <h3>Lemon Tree Event</h3>
+            <span>Corporate &amp; Celebration · Delhi NCR</span>
+          </div>
+          <div class="text-right">
+            <div class="event-photo-count">15<small>photos</small></div>
+          </div>
+        </div>
+        <div class="photo-grid photo-grid-landscape">
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 0)">
+            <img src="images/Lemon Tree - 1/IMG_7147.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 1)">
+            <img src="images/Lemon Tree - 1/DPP_8646.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 2)">
+            <img src="images/Lemon Tree - 1/IMG_7162.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 3)">
+            <img src="images/Lemon Tree - 1/IMG_7176.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 4)">
+            <img src="images/Lemon Tree - 1/IMG_7180.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 5)">
+            <img src="images/Lemon Tree - 1/IMG_7192.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 6)">
+            <img src="images/Lemon Tree - 1/IMG_7198.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 7)">
+            <img src="images/Lemon Tree - 1/IMG_7209.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 8)">
+            <img src="images/Lemon Tree - 1/IMG_7234.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 9)">
+            <img src="images/Lemon Tree - 1/IMG_7253.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 10)">
+            <img src="images/Lemon Tree - 1/IMG_7307.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 11)">
+            <img src="images/Lemon Tree - 1/IMG_7350.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 12)">
+            <img src="images/Lemon Tree - 1/IMG_7358.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 13)">
+            <img src="images/Lemon Tree - 1/IMG_7487.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('lemontree', 14)">
+            <img src="images/Lemon Tree - 1/DPP_9108.jpg" alt="Lemon Tree Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIPRANSH & ANJALI panel ── -->
+      <div class="event-panel" id="panel-vipransh">
+        <div class="event-header">
+          <div class="event-header-info">
+            <h3>Vipransh &amp; Anjali</h3>
+            <span>Wedding · Delhi NCR</span>
+          </div>
+          <div class="text-right">
+            <div class="event-photo-count">12<small>photos</small></div>
+          </div>
+        </div>
+        <div class="photo-grid photo-grid-mixed">
+          <div class="photo-cell portrait" onclick="openLB('vipransh', 0)">
+            <img src="images/Vipransh and Anjali - 1/0M1A7694.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('vipransh', 1)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8122.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('vipransh', 2)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8158.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('vipransh', 3)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8197.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('vipransh', 4)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8209.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('vipransh', 5)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8447.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('vipransh', 6)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8462.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('vipransh', 7)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8545.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('vipransh', 8)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8558.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell portrait" onclick="openLB('vipransh', 9)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8635.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('vipransh', 10)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8664.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+          <div class="photo-cell landscape" onclick="openLB('vipransh', 11)">
+            <img src="images/Vipransh and Anjali - 1/0M1A8740.jpg" alt="Vipransh & Anjali" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── DEEPAK panel ── -->
+      <div class="event-panel" id="panel-deepak">
+        <div class="event-header">
+          <div class="event-header-info">
+            <h3>Deepak's Event</h3>
+            <span>Event Coverage · Delhi NCR</span>
+          </div>
+          <div class="text-right">
+            <div class="event-photo-count">1<small>photo</small></div>
+          </div>
+        </div>
+        <div class="photo-grid photo-grid-single">
+          <div class="photo-cell landscape" style="aspect-ratio: 3/2; max-height: 500px;" onclick="openLB('deepak', 0)">
+            <img src="images/Deepak - 1 /DSC01630.jpg" alt="Deepak Event" loading="lazy">
+            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA below portfolio -->
+      <div class="mt-12 text-center reveal">
+        <p class="font-body text-muted text-sm mb-5">Want to see more from a specific event?</p>
+        <a href="#contact" class="btn-dark">Request Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO LIGHTBOX -->
+  <div id="portfolioLightbox" role="dialog" aria-modal="true" aria-label="Photo gallery">
+    <button class="lb-close-btn" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <div class="lb-img-wrap">
+      <button class="lb-nav-btn prev" onclick="lbNav(-1)" aria-label="Previous photo">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <img id="lbMainImg" src="" alt="Gallery photo">
+      <button class="lb-nav-btn next" onclick="lbNav(1)" aria-label="Next photo">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+    <div class="lb-caption">
+      <div class="lb-event-name" id="lbEventName"></div>
+      <div class="lb-counter" id="lbCounter"></div>
+    </div>
+    <div class="lb-strip" id="lbStrip"></div>
+  </div>
+
+
+  <!-- REAL WEDDING STORIES -->
+  <section id="stories" class="py-20 md:py-32 bg-cream-dk border-t border-border">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16">
+      <div class="text-center mb-16 reveal">
+        <p class="font-body text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-4">Real Weddings</p>
+        <h2 class="font-display text-ink font-bold mb-4"
+          style="font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.15;">Stories We've Had the Joy to Tell
+        </h2>
+        <div class="w-12 h-[1.5px] bg-gold mx-auto mt-5"></div>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div
+          class="group bg-white border border-border p-2 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 reveal">
+          <div class="img-hover-zoom aspect-[3/2] rounded-xl relative mb-5">
+            <img class="w-full h-full object-cover" src="images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg"
+              alt="Abhishek Kapoor Wedding" loading="lazy">
+            <div
+              class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-gold text-xs font-body font-bold uppercase tracking-wider">
+              Wedding</div>
+          </div>
+          <div class="px-2 pb-3">
+            <p class="font-body text-gold text-xs uppercase tracking-wider font-semibold mb-2">Full Day
+              Coverage</p>
+            <h3 class="font-display text-ink font-bold text-xl mb-3">Abhishek Kapoor Wedding</h3>
+            <p class="font-body text-muted text-sm leading-relaxed mb-5">A beautiful wedding celebration
+              filled with heartfelt moments. We captured the pheras, the baraat, family portraits, and
+              every candid moment in between.</p>
+            <div
+              class="flex gap-6 border-t border-border pt-4 text-xs font-body text-muted/80 font-bold uppercase tracking-wider">
+              <span>Delhi NCR</span>
+              <span>13 Photos</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group bg-white border border-border p-2 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 reveal">
+          <div class="img-hover-zoom aspect-[3/2] rounded-xl relative mb-5">
+            <img class="w-full h-full object-cover" src="images/Vipransh and Anjali - 1/0M1A8447.jpg"
+              alt="Vipransh & Anjali" loading="lazy">
+            <div
+              class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-gold text-xs font-body font-bold uppercase tracking-wider">
+              Wedding</div>
+          </div>
+          <div class="px-2 pb-3">
+            <p class="font-body text-gold text-xs uppercase tracking-wider font-semibold mb-2">Full Wedding
+              Coverage</p>
+            <h3 class="font-display text-ink font-bold text-xl mb-3">Vipransh &amp; Anjali</h3>
+            <p class="font-body text-muted text-sm leading-relaxed mb-5">A warm and intimate wedding where
+              love filled every frame. From getting-ready moments to the last dance, we documented their
+              beautiful story.</p>
+            <div
+              class="flex gap-6 border-t border-border pt-4 text-xs font-body text-muted/80 font-bold uppercase tracking-wider">
+              <span>Delhi NCR</span>
+              <span>12 Photos</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group bg-white border border-border p-2 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 reveal">
+          <div class="img-hover-zoom aspect-[3/2] rounded-xl relative mb-5">
+            <img class="w-full h-full object-cover" src="images/Lemon Tree - 1/IMG_7234.jpg" alt="Lemon Tree Event"
+              loading="lazy">
+            <div
+              class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-gold text-xs font-body font-bold uppercase tracking-wider">
+              Event</div>
+          </div>
+          <div class="px-2 pb-3">
+            <p class="font-body text-gold text-xs uppercase tracking-wider font-semibold mb-2">Event
+              Coverage</p>
+            <h3 class="font-display text-ink font-bold text-xl mb-3">Lemon Tree Event</h3>
+            <p class="font-body text-muted text-sm leading-relaxed mb-5">A lively celebration at the Lemon
+              Tree venue. Our team captured the energy of the event, the decor details, and all the
+              precious moments throughout the evening.</p>
+            <div
+              class="flex gap-6 border-t border-border pt-4 text-xs font-body text-muted/80 font-bold uppercase tracking-wider">
+              <span>Delhi NCR</span>
+              <span>15 Photos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-20 md:py-32 bg-cream overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16">
+      <div class="text-center mb-16 reveal">
+        <p class="font-body text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-4">Client Reviews</p>
+        <h2 class="font-display text-ink font-bold mb-4"
+          style="font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.15;">What Our Couples Say</h2>
+        <div class="w-12 h-[1.5px] bg-gold mx-auto mt-5"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div class="testimonial-card reveal" style="min-height:380px;">
+          <div class="bg-img" style="background-image: url('images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg');"></div>
+          <div class="overlay"></div>
+          <div class="content">
+            <div>
+              <div class="flex gap-1 text-gold text-lg mb-5">★★★★★</div>
+              <p class="font-serif text-white/95 text-xl sm:text-2xl italic leading-relaxed mb-6">
+                "Choosing DLUX Media was the best decision we made for our wedding. They were invisible
+                during the ceremony but their photos made us cry with joy. Every image is perfect."</p>
+            </div>
+            <div class="flex items-center gap-4 border-t border-white/15 pt-5">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Review"
+                class="w-12 h-12 rounded-full border-2 border-gold object-cover">
+              <div>
+                <p class="font-display text-white font-semibold text-base">Sunita & Vikram Sharma</p>
+                <p class="font-body text-white/50 text-xs uppercase tracking-wider">Leela Palace, New
+                  Delhi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" style="min-height:380px;">
+          <div class="bg-img" style="background-image: url('images/Vipransh and Anjali - 1/0M1A8447.jpg');">
+          </div>
+          <div class="overlay"></div>
+          <div class="content">
+            <div>
+              <div class="flex gap-1 text-gold text-lg mb-5">★★★★★</div>
+              <p class="font-serif text-white/95 text-xl sm:text-2xl italic leading-relaxed mb-6">"Our
+                photos look like a magazine shoot. The team made us feel so comfortable. We didn't have
+                to pose — they just captured us being us."</p>
+            </div>
+            <div class="flex items-center gap-4 border-t border-white/15 pt-5">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Review"
+                class="w-12 h-12 rounded-full border-2 border-gold object-cover">
+              <div>
+                <p class="font-display text-white font-semibold text-base">Rohit & Divya Mehta</p>
+                <p class="font-body text-white/50 text-xs uppercase tracking-wider">Wedding Coverage</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" style="min-height:380px;">
+          <div class="bg-img" style="background-image: url('images/Lemon Tree - 1/IMG_7180.jpg');">
+          </div>
+          <div class="overlay"></div>
+          <div class="content">
+            <div>
+              <div class="flex gap-1 text-gold text-lg mb-5">★★★★★</div>
+              <p class="font-serif text-white/95 text-xl sm:text-2xl italic leading-relaxed mb-6">"The
+                wedding film they edited is something we watch every anniversary. The slow-motion of my
+                parents blessing us — I had no idea they captured that. I cried the first time I saw
+                it."</p>
+            </div>
+            <div class="flex items-center gap-4 border-t border-white/15 pt-5">
+              <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Review"
+                class="w-12 h-12 rounded-full border-2 border-gold object-cover">
+              <div>
+                <p class="font-display text-white font-semibold text-base">Sneha & Karan Gupta</p>
+                <p class="font-body text-white/50 text-xs uppercase tracking-wider">Farmhouse Wedding,
+                  Delhi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" style="min-height:380px;">
+          <div class="bg-img" style="background-image: url('images/Abhishek Kapoor Wedding - 1/IMG_9955.jpg');"></div>
+          <div class="overlay"></div>
+          <div class="content">
+            <div>
+              <div class="flex gap-1 text-gold text-lg mb-5">★★★★★</div>
+              <p class="font-serif text-white/95 text-xl sm:text-2xl italic leading-relaxed mb-6">
+                "Professional from the first call to the final album delivery. The team is patient,
+                friendly, and so talented. Our families were very happy with every single photo. Highly
+                recommended."</p>
+            </div>
+            <div class="flex items-center gap-4 border-t border-white/15 pt-5">
+              <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Review"
+                class="w-12 h-12 rounded-full border-2 border-gold object-cover">
+              <div>
+                <p class="font-display text-white font-semibold text-base">Meera & Arjun Kapoor</p>
+                <p class="font-body text-white/50 text-xs uppercase tracking-wider">The Oberoi, Gurgaon
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section id="process" class="py-20 md:py-32 bg-cream-dk border-t border-border">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16">
+      <div class="text-center mb-16 reveal">
+        <p class="font-body text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-4">How It Works</p>
+        <h2 class="font-display text-ink font-bold mb-4"
+          style="font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.15;">Simple. Smooth. Stress-Free.</h2>
+        <div class="w-12 h-[1.5px] bg-gold mx-auto mt-5"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-5xl mx-auto">
+        <div
+          class="flex flex-col items-center text-center p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm hover:-translate-y-1 transition-transform duration-300 reveal">
+          <div class="step-num mb-6">1</div>
+          <h3 class="font-display text-ink font-bold text-xl mb-3">Talk to Us</h3>
+          <p class="font-body text-muted text-sm leading-relaxed">Tell us about your event — the date, venue,
+            and what matters most to you. We'll listen carefully and share what we can do for you.</p>
+        </div>
+        <div
+          class="flex flex-col items-center text-center p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm hover:-translate-y-1 transition-transform duration-300 reveal">
+          <div class="step-num mb-6">2</div>
+          <h3 class="font-display text-ink font-bold text-xl mb-3">We Show Up</h3>
+          <p class="font-body text-muted text-sm leading-relaxed">On your wedding day, we arrive early and
+            stay until the last dance. We move quietly and capture everything — posed and unposed.</p>
+        </div>
+        <div
+          class="flex flex-col items-center text-center p-6 sm:p-8 bg-white border border-border rounded-2xl shadow-sm hover:-translate-y-1 transition-transform duration-300 reveal">
+          <div class="step-num mb-6">3</div>
+          <h3 class="font-display text-ink font-bold text-xl mb-3">You Receive Memories</h3>
+          <p class="font-body text-muted text-sm leading-relaxed">We edit and deliver your photos and film in
+            a private online gallery. High-resolution files, beautifully colour-graded, ready to download
+            and print.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM / SOCIAL -->
+  <section id="instagram" class="py-20 md:py-32 bg-cream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16 text-center">
+      <p class="font-body text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-4 reveal">Instagram</p>
+      <h2 class="font-display text-ink font-bold mb-4 reveal"
+        style="font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.15;">Follow Our Journey</h2>
+      <p class="font-body text-muted text-base max-w-lg mx-auto mb-14 reveal">Behind-the-scenes shots, sneak
+        peeks, and real wedding moments from our latest shoots.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
+        <div class="ig-card bg-white p-2 border border-border rounded-2xl shadow-sm reveal">
+          <div class="aspect-[9/14] img-hover-zoom rounded-xl relative overflow-hidden bg-ink">
+            <img class="w-full h-full object-cover" src="images/Abhishek Kapoor Wedding - 1/IMG_0151.jpg"
+              alt="Wedding moments" loading="lazy">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-ink/70 to-transparent p-4 text-left">
+              <span class="font-body text-gold text-xs font-bold uppercase tracking-widest block mb-0.5">●
+                Candid</span>
+              <span class="font-display text-white text-sm font-semibold">Wedding Moments</span>
+            </div>
+          </div>
+        </div>
+        <div class="ig-card bg-white p-2 border border-border rounded-2xl shadow-sm reveal">
+          <div class="aspect-[9/14] img-hover-zoom rounded-xl relative overflow-hidden bg-ink">
+            <img class="w-full h-full object-cover" src="images/Vipransh and Anjali - 1/0M1A8158.jpg"
+              alt="Wedding portrait" loading="lazy">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-ink/70 to-transparent p-4 text-left">
+              <span class="font-body text-gold text-xs font-bold uppercase tracking-widest block mb-0.5">●
+                Portrait</span>
+              <span class="font-display text-white text-sm font-semibold">Bridal Portraits</span>
+            </div>
+          </div>
+        </div>
+        <div class="ig-card bg-white p-2 border border-border rounded-2xl shadow-sm reveal">
+          <div class="aspect-[9/14] img-hover-zoom rounded-xl relative overflow-hidden bg-ink">
+            <img class="w-full h-full object-cover" src="images/Abhishek Kapoor Wedding - 1/IMG_9836.jpg"
+              alt="Wedding photography" loading="lazy">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-ink/70 to-transparent p-4 text-left">
+              <span class="font-body text-gold text-xs font-bold uppercase tracking-widest block mb-0.5">●
+                Wedding</span>
+              <span class="font-display text-white text-sm font-semibold">Real Moments</span>
+            </div>
+          </div>
+        </div>
+        <div class="ig-card bg-white p-2 border border-border rounded-2xl shadow-sm reveal">
+          <div class="aspect-[9/14] img-hover-zoom rounded-xl relative overflow-hidden bg-ink">
+            <img class="w-full h-full object-cover" src="images/Vipransh and Anjali - 1/0M1A8635.jpg" alt="Wedding film"
+              loading="lazy">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-ink/70 to-transparent p-4 text-left">
+              <span class="font-body text-gold text-xs font-bold uppercase tracking-widest block mb-0.5">●
+                Film</span>
+              <span class="font-display text-white text-sm font-semibold">Cinematic Coverage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://instagram.com/dluxmedia" target="_blank" rel="noopener" class="btn-dark">Follow
+        @dluxmedia</a>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="py-20 md:py-28 bg-ink relative overflow-hidden text-center">
+    <div class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 70%);"></div>
+    <div class="max-w-4xl mx-auto px-5 sm:px-10 relative z-10">
+      <p class="font-body text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-6 reveal">Limited Dates
+        Available</p>
+      <h2 class="font-display text-cream font-bold mb-6 reveal"
+        style="font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.12;">
+        Your Wedding Date<br>
+        <span class="italic font-normal" style="color: #DFC07A;">Deserves the Best Team</span>
+      </h2>
+      <p class="font-body text-cream/55 text-base leading-relaxed max-w-xl mx-auto mb-10 reveal">We take on a
+        limited number of weddings each year to give every couple our full attention. Check if your date is
+        available.</p>
+      <div class="flex flex-wrap justify-center gap-4 reveal">
+        <a href="#contact" class="btn-gold">Check Availability</a>
+        <a href="https://wa.me/918851638940?text=Hi%20DLUX%20Media%2C%20I%20saw%20your%20website%20and%20would%20love%20to%20know%20more%20about%20your%20photography%20packages%20for%20my%20wedding!"
+          target="_blank" rel="noopener" class="btn-outline inline-flex items-center gap-2">
+          <svg class="w-4 h-4 fill-emerald-400 shrink-0" viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+          </svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / BOOKING FORM -->
+  <section id="contact" class="py-20 md:py-32 bg-cream">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-start">
+        <div class="lg:col-span-5 reveal">
+          <p class="font-body text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-5">Get in Touch
+          </p>
+          <h2 class="font-display text-ink font-bold mb-6"
+            style="font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.15;">Let's Plan Your Wedding
+            Together</h2>
+          <div class="w-10 h-[1.5px] bg-gold mb-7"></div>
+          <p class="font-body text-muted text-base leading-relaxed mb-10">Fill in the form and we'll get back
+            to you within 24 hours. Or you can reach us directly — we're always happy to talk.</p>
+          <div class="flex flex-col gap-6">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 border border-gold/40 rounded-full flex items-center justify-center text-gold shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-display text-ink font-semibold text-base mb-0.5">Our Studio</p>
+                <p class="font-body text-muted text-sm">Delhi · Gurgaon · Noida · Ghaziabad · Faridabad
+                </p>
+              </div>
+            </div>
+            <a href="tel:+918851638940" class="flex items-start gap-4 hover:translate-x-1 transition-transform">
+              <div
+                class="w-10 h-10 border border-gold/40 rounded-full flex items-center justify-center text-gold shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-display text-ink font-semibold text-base mb-0.5">Call Us</p>
+                <p class="font-body text-muted text-sm">+91 88516 38940 &nbsp;·&nbsp; +91 88823 30871
+                </p>
+              </div>
+            </a>
+            <a href="mailto:studiosdream.in@gmail.com"
+              class="flex items-start gap-4 hover:translate-x-1 transition-transform">
+              <div
+                class="w-10 h-10 border border-gold/40 rounded-full flex items-center justify-center text-gold shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L22 8m-2 11H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2v11a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-display text-ink font-semibold text-base mb-0.5">Email Us</p>
+                <p class="font-body text-muted text-sm">studiosdream.in@gmail.com</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-7 bg-white border border-border p-7 sm:p-12 rounded-2xl shadow-lg reveal">
+          <div class="flex justify-between relative mb-10">
+            <div class="absolute top-4 left-0 right-0 h-[1px] bg-border z-0"></div>
+            <div class="form-step w-1/3 flex flex-col items-center relative z-10" id="step0">
+              <div
+                class="step-dot w-8 h-8 rounded-full border-2 border-gold bg-gold flex items-center justify-center font-body text-ink text-xs font-bold mb-2">
+                1</div>
+              <span class="font-body text-gold text-xs uppercase tracking-widest font-bold">You</span>
+            </div>
+            <div class="form-step w-1/3 flex flex-col items-center relative z-10" id="step1">
+              <div
+                class="step-dot w-8 h-8 rounded-full border-2 border-border bg-cream flex items-center justify-center font-body text-muted/50 text-xs font-bold mb-2">
+                2</div>
+              <span class="font-body text-muted/50 text-xs uppercase tracking-widest font-bold">Event</span>
+            </div>
+            <div class="form-step w-1/3 flex flex-col items-center relative z-10" id="step2">
+              <div
+                class="step-dot w-8 h-8 rounded-full border-2 border-border bg-cream flex items-center justify-center font-body text-muted/50 text-xs font-bold mb-2">
+                3</div>
+              <span class="font-body text-muted/50 text-xs uppercase tracking-widest font-bold">Notes</span>
+            </div>
+          </div>
+          <form id="bookForm" novalidate>
+            <div id="fp0" class="form-page">
+              <h3 class="font-display text-ink font-bold text-xl sm:text-2xl mb-1">About You</h3>
+              <p class="font-body text-muted text-sm mb-8">Just a few details so we can reach you.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label class="font-body text-xs uppercase tracking-widest font-bold text-ink/60 mb-2 block">Full
+                    Name *</label>
+                  <input type="text" name="fullName" placeholder="Rahul Sharma" required class="form-input">
+                  <p class="err text-xs text-red-500 mt-1.5 hidden">Please enter your name.</p>
+                </div>
+                <div>
+                  <label class="font-body text-xs uppercase tracking-widest font-bold text-ink/60 mb-2 block">Mobile
+                    *</label>
+                  <input type="tel" name="phone" placeholder="9876543210" inputmode="numeric" required
+                    pattern="[6-9][0-9]{9}" maxlength="10" class="form-input">
+                  <p class="err text-xs text-red-500 mt-1.5 hidden">Please enter a valid 10-digit
+                    number.</p>
+                </div>
+              </div>
+              <div class="mb-5">
+                <label class="font-body text-xs uppercase tracking-widest font-bold text-ink/60 mb-2 block">Email
+                  *</label>
+                <input type="email" name="email" placeholder="rahul@example.com" required class="form-input">
+                <p class="err text-xs text-red-500 mt-1.5 hidden">Please enter a valid email.</p>
+              </div>
+              <div class="mb-8">
+                <label class="font-body text-xs uppercase tracking-widest font-bold text-ink/60 mb-2 block">How
+                  did you find us?</label>
+                <select name="source" class="form-input">
+                  <option value="">Select...</option>
+                  <option>Instagram</option>
+                  <option>Google Search</option>
+                  <option>Friend / Family Referral</option>
+                  <option>Wedding Planner</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="flex justify-end">
+                <button type="button" onclick="nextStep(1)" class="btn-gold">Next →</button>
+              </div>
+            </div>
+            <div id="fp1" class="form-page hidden">
+              <h3 class="font-display text-ink font-bold text-xl sm:text-2xl mb-1">Your Event</h3>
+              <p class="font-body text-muted text-sm mb-8">Tell us about your celebration.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label class="font-body text-xs uppercase tracking-widest font-bold text-ink/60 mb-2 block">Service
+                    Needed *</label>
+                  <select name="service" required class="form-input">
+                    <option value="">Select...</option>
+                    <option>Wedding</option>
+                    <option>Engagement</option>
+                    <option>Pre-Wedding</option>
+                    <option>Birthday / Celebration</option>
+                    <option>Maternity / Family</option>
+                    <option>Corporate</option>
+                    <option>Other</option>
+                  </select>
+                  <p class="err text-xs text-red-500 mt-1.5 hidden">Please select a service.</p>
+                </div>
+                <div>
+                  <label class="font-body text-xs uppercase tracking-widest font-bold text-ink/60 mb-2 block">Event
+                    Date *</label>
+                  <input type="date" name="eventDate" required class="form-input">
+                  <p class="err text-xs text-red-500 mt-1.5 hidden">Please pick a date.</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+                <div>
+                  <label class="font-body text-xs uppercase tracking-widest font-bold text-ink/60 mb-2 block">Venue
+                    *</label>
+                  <input type="text" name="location" placeholder="e.g. The Leela, Delhi" required class="form-input">
+                  <p class="err text-xs text-red-500 mt-1.5 hidden">Please enter the venue.</p>
+                </div>
+                <div>
+                  <label class="font-body text-xs uppercase tracking-widest font-bold text-ink/60 mb-2 block">Budget
+                    Range</label>
+                  <select name="budget" class="form-input">
+                    <option value="">Prefer not to say</option>
+                    <option>Below ₹20,000</option>
+                    <option>₹20,000 – ₹50,000</option>
+                    <option>₹50,000 – ₹1,00,000</option>
+                    <option>₹1,00,000 – ₹2,00,000</option>
+                    <option>Above ₹2,00,000</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <button type="button" onclick="nextStep(0)"
+                  class="font-body text-xs font-bold uppercase tracking-widest text-muted hover:text-ink transition-colors">←
+                  Back</button>
+                <button type="button" onclick="nextStep(2)" class="btn-gold">Next →</button>
+              </div>
+            </div>
+            <div id="fp2" class="form-page hidden">
+              <h3 class="font-display text-ink font-bold text-xl sm:text-2xl mb-1">Anything Else?</h3>
+              <p class="font-body text-muted text-sm mb-8">Share any details that will help us prepare for
+                your big day.</p>
+              <div class="mb-8">
+                <label class="font-body text-xs uppercase tracking-widest font-bold text-ink/60 mb-2 block">Your
+                  Notes</label>
+                <textarea name="message" rows="5" placeholder="Number of events, special requirements, venues, ideas..."
+                  class="form-input form-textarea w-full" style="border-radius:16px;"></textarea>
+              </div>
+              <div class="flex justify-between items-center">
+                <button type="button" onclick="nextStep(1)"
+                  class="font-body text-xs font-bold uppercase tracking-widest text-muted hover:text-ink transition-colors">←
+                  Back</button>
+                <button type="button" onclick="submitForm()"
+                  class="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-600 text-white text-xs font-body font-bold uppercase tracking-widest rounded-full hover:bg-emerald-700 transition-colors">
+                  <svg class="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                  </svg>
+                  Send via WhatsApp
+                </button>
+              </div>
+            </div>
+          </form>
+          <div id="formDone" class="hidden text-center py-12 flex flex-col items-center">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center text-gold mb-5">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="font-display text-ink font-bold text-2xl mb-3">Great, We Got It!</h3>
+            <p class="font-body text-muted text-sm max-w-sm mb-8 leading-relaxed">Your enquiry has been sent
+              via WhatsApp. We'll confirm your date and call you back within 24 hours.</p>
+            <a id="waFinalLink" href="#" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-600 text-white text-xs font-body font-bold uppercase tracking-widest rounded-full hover:bg-emerald-700 transition-colors">Open
+              WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink pt-16 sm:pt-20 pb-10 border-t border-gold/10">
+    <div
+      class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-12 border-b border-white/5">
+      <div class="lg:col-span-4 flex flex-col gap-5">
+        <a href="#hero" class="flex items-center gap-3">
+          <img src="Main Logo.png" alt="DLUX Media" class="h-16 sm:h-20 w-auto object-contain"
+            onerror="this.src='Logo.png'; this.className='h-12 w-12 object-contain'">
+        </a>
+        <p class="font-serif text-gold italic text-base">Your story. Every Occasion. Beautifully Told.</p>
+        <p class="font-body text-cream/45 text-sm leading-relaxed max-w-xs">Delhi NCR's trusted wedding
+          photographers & filmmakers. We travel all over India to capture your most important moments.</p>
+        <div class="flex gap-3">
+          <a href="https://instagram.com/dluxmedia" target="_blank" rel="noopener"
+            class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:border-gold hover:text-gold transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/dlux-media-services-513761408/" target="_blank" rel="noopener"
+            class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:border-gold hover:text-gold transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="https://wa.me/918851638940" target="_blank" rel="noopener"
+            class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:border-emerald-500 hover:text-emerald-500 transition-colors">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-2 flex flex-col gap-5">
+        <h4 class="font-body text-xs uppercase tracking-[0.2em] font-bold text-white">Quick Links</h4>
+        <ul class="flex flex-col gap-3 font-body text-sm text-cream/45">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-3 flex flex-col gap-5">
+        <h4 class="font-body text-xs uppercase tracking-[0.2em] font-bold text-white">Services</h4>
+        <ul class="flex flex-col gap-3 font-body text-sm text-cream/45">
+          <li><a href="#services">Wedding Photography</a></li>
+          <li><a href="#services">Wedding Films</a></li>
+          <li><a href="#services">Pre-Wedding Shoots</a></li>
+          <li><a href="#services">Engagement</a></li>
+          <li><a href="#services">Birthdays & Maternity</a></li>
+          <li><a href="#services">Corporate Events</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-3 flex flex-col gap-5">
+        <h4 class="font-body text-xs uppercase tracking-[0.2em] font-bold text-white">Contact</h4>
+        <ul class="flex flex-col gap-3 font-body text-sm text-cream/45">
+          <li><a href="mailto:studiosdream.in@gmail.com">studiosdream.in@gmail.com</a></li>
+          <li><a href="tel:+918851638940">+91 88516 38940</a></li>
+          <li><a href="tel:+918882330871">+91 88823 30871</a></li>
+          <li class="text-cream/35">Delhi · Gurgaon · Noida · Ghaziabad</li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 font-body text-xs text-cream/30">
+      <p>© 2026 DLUX Media Services. All rights reserved.</p>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-gold transition-colors">Terms of Use</a>
+      </div>
+      <img src="Logo.png" alt="DLUX" class="w-8 h-8 object-contain opacity-30">
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/918851638940?text=Hi%20DLUX%20Media%2C%20I%20visited%20your%20website%20and%20would%20love%20to%20enquire%20about%20your%20wedding%20photography%20packages!"
+    target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+    class="fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-[9998] w-14 h-14 sm:w-16 sm:h-16 bg-emerald-500 hover:bg-emerald-600 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110">
+    <span class="absolute inset-0 rounded-full bg-emerald-500/40 animate-ping"></span>
+    <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-white relative z-10" viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+  <script>
+    // ── PRELOADER ──
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      const brand = document.getElementById('loaderBrand');
+      const tagline = document.getElementById('loaderTagline');
+      setTimeout(() => { brand.classList.remove('opacity-0', 'translate-y-8'); }, 200);
+      setTimeout(() => { tagline.classList.remove('opacity-0'); tagline.classList.add('opacity-100'); }, 600);
+      setTimeout(() => { loader.classList.add('hidden'); }, 2200);
+    });
+
+    // ── HERO SLIDESHOW ──
+    let slideIdx = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const slideDots = document.querySelectorAll('.slide-dot');
+    function goSlide(n) {
+      slides[slideIdx].classList.remove('opacity-100'); slides[slideIdx].classList.add('opacity-0');
+      slideDots[slideIdx].classList.remove('w-10', 'bg-gold'); slideDots[slideIdx].classList.add('w-7', 'bg-white/30');
+      slideIdx = n;
+      slides[slideIdx].classList.remove('opacity-0'); slides[slideIdx].classList.add('opacity-100');
+      slideDots[slideIdx].classList.remove('w-7', 'bg-white/30'); slideDots[slideIdx].classList.add('w-10', 'bg-gold');
+    }
+    setInterval(() => goSlide((slideIdx + 1) % slides.length), 5500);
+
+    // ── NAVBAR SCROLL ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+
+    // ── MOBILE MENU ──
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hb1 = document.getElementById('hb1'), hb2 = document.getElementById('hb2'), hb3 = document.getElementById('hb3');
+    document.getElementById('navToggle').addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('opacity-0');
+      if (open) closeMobile(); else openMobile();
+    });
+    function openMobile() {
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+      mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      hb1.classList.add('rotate-45', 'translate-y-[7px]'); hb2.classList.add('opacity-0');
+      hb3.classList.add('-rotate-45', '-translate-y-[7px]');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobile() {
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+      mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      hb1.classList.remove('rotate-45', 'translate-y-[7px]'); hb2.classList.remove('opacity-0');
+      hb3.classList.remove('-rotate-45', '-translate-y-[7px]');
+      document.body.style.overflow = '';
+    }
+
+    // ── SCROLL REVEALS ──
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+    // ── PORTFOLIO: Event Tab Switching ──
+    function switchEvent(btn, eventKey) {
+      document.querySelectorAll('.event-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.event-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('panel-' + eventKey).classList.add('active');
+    }
+
+    // ── PORTFOLIO LIGHTBOX ──
+    const eventData = {
+      abhishek: {
+        name: 'Abhishek Kapoor Wedding',
+        photos: [
+          'images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_0151.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_0156.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_9867.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_9836.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_0213.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_9842.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_9853.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_9875.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_9970.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_9955.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_9992.jpg',
+          'images/Abhishek Kapoor Wedding - 1/IMG_9999.jpg',
+        ]
+      },
+      lemontree: {
+        name: 'Lemon Tree Event',
+        photos: [
+          'images/Lemon Tree - 1/IMG_7147.jpg',
+          'images/Lemon Tree - 1/DPP_8646.jpg',
+          'images/Lemon Tree - 1/IMG_7162.jpg',
+          'images/Lemon Tree - 1/IMG_7176.jpg',
+          'images/Lemon Tree - 1/IMG_7180.jpg',
+          'images/Lemon Tree - 1/IMG_7192.jpg',
+          'images/Lemon Tree - 1/IMG_7198.jpg',
+          'images/Lemon Tree - 1/IMG_7209.jpg',
+          'images/Lemon Tree - 1/IMG_7234.jpg',
+          'images/Lemon Tree - 1/IMG_7253.jpg',
+          'images/Lemon Tree - 1/IMG_7307.jpg',
+          'images/Lemon Tree - 1/IMG_7350.jpg',
+          'images/Lemon Tree - 1/IMG_7358.jpg',
+          'images/Lemon Tree - 1/IMG_7487.jpg',
+          'images/Lemon Tree - 1/DPP_9108.jpg',
+        ]
+      },
+      vipransh: {
+        name: 'Vipransh & Anjali',
+        photos: [
+          'images/Vipransh and Anjali - 1/0M1A7694.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8122.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8158.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8197.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8209.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8447.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8462.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8545.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8558.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8635.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8664.jpg',
+          'images/Vipransh and Anjali - 1/0M1A8740.jpg',
+        ]
+      },
+      deepak: {
+        name: "Deepak's Event",
+        photos: [
+          'images/Deepak - 1 /DSC01630.jpg',
+        ]
+      }
+    };
+
+    let lbActive = null;
+    let lbIdx = 0;
+
+    function openLB(eventKey, idx) {
+      lbActive = eventKey;
+      lbIdx = idx;
+      const lb = document.getElementById('portfolioLightbox');
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      renderLB();
+    }
+
+    function renderLB() {
+      const event = eventData[lbActive];
+      const img = document.getElementById('lbMainImg');
+      img.src = event.photos[lbIdx];
+      img.alt = event.name;
+      document.getElementById('lbEventName').textContent = event.name;
+      document.getElementById('lbCounter').textContent = (lbIdx + 1) + ' / ' + event.photos.length + ' photos';
+
+      // Filmstrip
+      const strip = document.getElementById('lbStrip');
+      strip.innerHTML = '';
+      event.photos.forEach((src, i) => {
+        const thumb = document.createElement('div');
+        thumb.className = 'lb-strip-thumb' + (i === lbIdx ? ' active' : '');
+        thumb.onclick = () => { lbIdx = i; renderLB(); };
+        const thumbImg = document.createElement('img');
+        thumbImg.src = src;
+        thumbImg.alt = '';
+        thumb.appendChild(thumbImg);
+        strip.appendChild(thumb);
+      });
+
+      // Scroll active thumb into view
+      const activThumb = strip.children[lbIdx];
+      if (activThumb) activThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+                                                    
+    function lbNav(dir) {
+      const total = eventData[lbActive].photos.length;
+      lbIdx = (lbIdx + dir + total) % total;
+      renderLB();
+    }
+
+    function closeLightbox() {
+      document.getElementById('portfolioLightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // keyboard nav
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('portfolioLightbox').classList.contains('open')) return;
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft') lbNav(-1);
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // click outside to close
+    document.getElementById('portfolioLightbox').addEventListener('click', function (e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    // ── MULTI-STEP FORM ──
+    let curStep = 0;
+    const formPages = document.querySelectorAll('.form-page');
+    const stepDots = document.querySelectorAll('.step-dot');
+    const stepLabels = [
+      document.querySelector('#step0 span'),
+      document.querySelector('#step1 span'),
+      document.querySelector('#step2 span')
+    ];
+    function updateStepUI() {
+      stepDots.forEach((d, i) => {
+        if (i <= curStep) {
+          d.classList.remove('border-border', 'bg-cream', 'text-muted/50');
+          d.classList.add('border-gold', 'bg-gold', 'text-ink');
+        } else {
+          d.classList.add('border-border', 'bg-cream', 'text-muted/50');
+          d.classList.remove('border-gold', 'bg-gold', 'text-ink');
+        }
+      });
+      stepLabels.forEach((l, i) => {
+        l.style.color = i <= curStep ? '#C9A84C' : 'rgba(107,91,62,0.4)';
+      });
+    }
+    function validateStep(idx) {
+      const page = formPages[idx];
+      let valid = true;
+      page.querySelectorAll('[required]').forEach(f => {
+        const err = f.parentElement.querySelector('.err');
+        let ok = f.checkValidity();
+        if (f.name === 'phone' && f.value) ok = /^[6-9][0-9]{9}$/.test(f.value);
+        if (!ok) { valid = false; f.style.borderColor = '#ef4444'; if (err) err.classList.remove('hidden'); }
+        else { f.style.borderColor = ''; if (err) err.classList.add('hidden'); }
+      });
+      return valid;
+    }
+    function nextStep(target) {
+      if (target > curStep && !validateStep(curStep)) return;
+      formPages[curStep].classList.add('hidden');
+      curStep = target;
+      formPages[curStep].classList.remove('hidden');
+      updateStepUI();
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function submitForm() {
+      if (!validateStep(2)) return;
+      const fd = new FormData(document.getElementById('bookForm'));
+      const get = k => (fd.get(k) || '').toString().trim();
+      let dateStr = get('eventDate');
+      if (dateStr) {
+        const d = new Date(dateStr + 'T00:00:00');
+        dateStr = d.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+      }
+      const msg = ['Hi DLUX Media! I would like to book a slot.', '',
+        `Name: ${get('fullName')}`, `Phone: ${get('phone')}`, `Email: ${get('email')}`,
+        `Service: ${get('service')}`, `Date: ${dateStr}`, `Venue: ${get('location')}`,
+        get('budget') ? `Budget: ${get('budget')}` : '',
+        get('source') ? `Found via: ${get('source')}` : '',
+        get('message') ? `\nNotes: ${get('message')}` : '',
+        '\nPlease let me know your availability. Thank you!'
+      ].filter(Boolean).join('\n');
+      const waUrl = 'https://wa.me/918851638940?text=' + encodeURIComponent(msg);
+      document.getElementById('waFinalLink').href = waUrl;
+      document.getElementById('bookForm').style.display = 'none';
+      document.getElementById('formDone').classList.remove('hidden');
+      window.open(waUrl, '_blank');
+    }
+
+    // ── COOKIES ──
+    function checkCookie() {
+      if (!localStorage.getItem('dlux_cookie_consent')) {
+        setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1200);
+      }
+    }
+    function acceptCookies() {
+      localStorage.setItem('dlux_cookie_consent', 'accepted');
+      document.getElementById('cookieBanner').classList.remove('show');
+    }
+    function rejectCookies() {
+      localStorage.setItem('dlux_cookie_consent', 'rejected');
+      document.getElementById('cookieBanner').classList.remove('show');
+    }
+    checkCookie();
+  </script>
+
+</body>
+
+</html>
