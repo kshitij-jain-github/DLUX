@@ -452,10 +452,9 @@
     }
 
     /* ═══════════════════════════════════════════
-       REDESIGNED PORTFOLIO SECTION STYLES
+       PREMIUM PINTEREST-STYLE PORTFOLIO
     ════════════════════════════════════════════ */
 
-    /* Event tab pills */
     .event-tab {
       display: inline-flex;
       align-items: center;
@@ -490,8 +489,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 20px;
+      min-width: 20px;
       height: 20px;
+      padding: 0 4px;
       border-radius: 50%;
       background: rgba(201, 168, 76, 0.2);
       color: #C9A84C;
@@ -503,21 +503,12 @@
       background: rgba(201, 168, 76, 0.25);
     }
 
-    /* Event gallery panels */
-    .event-panel {
-      display: none;
-    }
-
-    .event-panel.active {
-      display: block;
-    }
-
     /* Event header strip */
     .event-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 28px;
+      padding: 18px 26px;
       background: #1A1209;
       border-radius: 16px 16px 0 0;
       margin-bottom: 0;
@@ -526,7 +517,7 @@
     .event-header-info h3 {
       font-family: 'Playfair Display', serif;
       color: #F5F0E8;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       margin: 0 0 2px 0;
     }
@@ -534,7 +525,7 @@
     .event-header-info span {
       font-family: 'Lato', sans-serif;
       color: rgba(201, 168, 76, 0.75);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-weight: 600;
@@ -543,14 +534,14 @@
     .event-photo-count {
       font-family: 'Playfair Display', serif;
       color: #C9A84C;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       line-height: 1;
     }
 
     .event-photo-count small {
       font-family: 'Lato', sans-serif;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: rgba(245, 240, 232, 0.4);
@@ -559,109 +550,211 @@
       font-weight: 600;
     }
 
-    /* Masonry photo grid */
-    .photo-grid {
-      display: grid;
-      gap: 6px;
+    /* Gallery wrap fades between categories */
+    #galleryWrap {
+      position: relative;
+    }
+
+    #galleryWrap.switching .pin-masonry {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    /* Pinterest-style CSS-column masonry */
+    .pin-masonry {
+      columns: 4 220px;
+      column-gap: 10px;
       background: #1A1209;
-      border-radius: 0 0 16px 16px;
-      padding: 6px;
+      border-radius: 0 0 18px 18px;
+      padding: 10px;
+      transition: opacity 0.35s ease, transform 0.35s ease;
     }
 
-    /* Portrait-heavy events: 3 col with auto rows */
-    .photo-grid-mixed {
-      grid-template-columns: repeat(3, 1fr);
+    .pin-masonry.no-header {
+      border-radius: 18px;
     }
 
-    /* Landscape-heavy: 2 col */
-    .photo-grid-landscape {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Single: 1 col */
-    .photo-grid-single {
-      grid-template-columns: 1fr;
+    @media (max-width: 1024px) {
+      .pin-masonry {
+        columns: 3 180px;
+      }
     }
 
     @media (max-width: 640px) {
-      .photo-grid-mixed {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .photo-grid-landscape {
-        grid-template-columns: 1fr;
+      .pin-masonry {
+        columns: 2 140px;
+        column-gap: 7px;
+        padding: 7px;
       }
     }
 
-    .photo-cell {
-      position: relative;
+    .pin-item {
+      break-inside: avoid;
+      margin-bottom: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      border-radius: 8px;
+      position: relative;
       cursor: pointer;
+      display: block;
+      background: #2E2416;
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+      animation: pinReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @media (max-width: 640px) {
+      .pin-item {
+        margin-bottom: 7px;
+        border-radius: 9px;
+      }
+    }
+
+    @keyframes pinReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .pin-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
       background: #2E2416;
     }
 
-    .photo-cell img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    .pin-item:hover img {
+      transform: scale(1.045);
     }
 
-    .photo-cell:hover img {
-      transform: scale(1.05);
-    }
-
-    .photo-cell .photo-overlay {
+    .pin-item .pin-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(26, 18, 9, 0.75) 0%, transparent 50%);
+      background: linear-gradient(to top, rgba(26, 18, 9, 0.85) 0%, rgba(26, 18, 9, 0.05) 55%, transparent 100%);
       opacity: 0;
       transition: opacity 0.35s ease;
       display: flex;
-      align-items: flex-end;
+      flex-direction: column;
+      justify-content: flex-end;
       padding: 14px;
-      border-radius: 8px;
     }
 
-    .photo-cell:hover .photo-overlay {
+    .pin-item:hover .pin-overlay {
       opacity: 1;
     }
 
-    .photo-cell .photo-overlay svg {
-      width: 22px;
-      height: 22px;
-      color: #C9A84C;
+    .pin-overlay .pin-zoom-icon {
+      align-self: flex-end;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.18);
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: auto;
+      transform: translateY(-6px);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    /* Portrait cell */
-    .photo-cell.portrait {
-      aspect-ratio: 2/3;
+    .pin-item:hover .pin-zoom-icon {
+      transform: translateY(0);
+      background: rgba(201, 168, 76, 0.35);
     }
 
-    /* Landscape cell */
-    .photo-cell.landscape {
-      aspect-ratio: 3/2;
+    .pin-overlay .pin-zoom-icon svg {
+      width: 14px;
+      height: 14px;
+      color: #DFC07A;
     }
 
-    /* Wide cell spanning 2 cols in landscape grid */
-    .photo-cell.wide {
-      grid-column: span 2;
-      aspect-ratio: 16/7;
+    .pin-overlay .pin-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #DFC07A;
     }
 
-    /* Tall cell spanning 2 rows */
-    .photo-cell.tall {
-      grid-row: span 2;
+    /* See more / less */
+    .see-more-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
     }
 
-    /* Inline lightbox for portfolio */
+    .see-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 32px;
+      border: 1.5px solid #1A1209;
+      border-radius: 60px;
+      background: transparent;
+      color: #1A1209;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .see-more-btn:hover {
+      background: #1A1209;
+      color: #F5F0E8;
+    }
+
+    .see-more-btn svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .see-more-btn.is-less svg {
+      transform: rotate(180deg);
+    }
+
+    .gallery-skeleton {
+      columns: 4 220px;
+      column-gap: 10px;
+      background: #1A1209;
+      border-radius: 18px;
+      padding: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .gallery-skeleton {
+        columns: 2 140px;
+        column-gap: 7px;
+        padding: 7px;
+      }
+    }
+
+    .skeleton-box {
+      break-inside: avoid;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      background: linear-gradient(110deg, #2E2416 8%, #3a2f1d 18%, #2E2416 33%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      to {
+        background-position-x: -200%;
+      }
+    }
+
+    /* ── LIGHTBOX ── */
     #portfolioLightbox {
       position: fixed;
       inset: 0;
-      background: rgba(26, 18, 9, 0.97);
-      backdrop-filter: blur(12px);
+      background: rgba(10, 8, 5, 0.985);
+      backdrop-filter: blur(14px);
       z-index: 99999;
       display: flex;
       flex-direction: column;
@@ -669,7 +762,8 @@
       justify-content: center;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.35s ease;
+      transition: opacity 0.4s ease;
+      touch-action: none;
     }
 
     #portfolioLightbox.open {
@@ -679,8 +773,18 @@
 
     #portfolioLightbox .lb-img-wrap {
       position: relative;
-      max-width: min(90vw, 1000px);
-      max-height: 78vh;
+      width: min(92vw, 1100px);
+      max-height: 74vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #portfolioLightbox .lb-stage {
+      position: relative;
+      max-width: 100%;
+      max-height: 74vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -688,20 +792,39 @@
 
     #portfolioLightbox #lbMainImg {
       max-width: 100%;
-      max-height: 78vh;
+      max-height: 74vh;
       object-fit: contain;
       border-radius: 10px;
-      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 32px 90px rgba(0, 0, 0, 0.65);
+      transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: zoom-in;
+      user-select: none;
+      -webkit-user-drag: none;
+      touch-action: none;
+    }
+
+    #portfolioLightbox #lbMainImg.zoomed {
+      cursor: zoom-out;
+    }
+
+    #portfolioLightbox #lbMainImg.sliding-left {
+      transform: translateX(-40px);
+      opacity: 0;
+    }
+
+    #portfolioLightbox #lbMainImg.sliding-right {
+      transform: translateX(40px);
+      opacity: 0;
     }
 
     .lb-nav-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
-      background: rgba(201, 168, 76, 0.15);
+      background: rgba(201, 168, 76, 0.12);
       border: 1px solid rgba(201, 168, 76, 0.3);
       color: #C9A84C;
       display: flex;
@@ -709,65 +832,75 @@
       justify-content: center;
       cursor: pointer;
       transition: background 0.2s, transform 0.2s;
-      z-index: 2;
+      z-index: 5;
     }
 
     .lb-nav-btn:hover {
       background: rgba(201, 168, 76, 0.3);
-      transform: translateY(-50%) scale(1.1);
+      transform: translateY(-50%) scale(1.08);
     }
 
     .lb-nav-btn.prev {
-      left: -60px;
+      left: -64px;
     }
 
     .lb-nav-btn.next {
-      right: -60px;
+      right: -64px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .lb-nav-btn.prev {
-        left: 8px;
+        left: 6px;
       }
 
       .lb-nav-btn.next {
-        right: 8px;
+        right: 6px;
       }
     }
 
-    .lb-close-btn {
+    .lb-close-btn,
+    .lb-zoom-btn {
       position: absolute;
-      top: 20px;
-      right: 24px;
+      top: 18px;
       width: 40px;
       height: 40px;
       border-radius: 50%;
       background: rgba(245, 240, 232, 0.08);
       border: none;
       color: #F5F0E8;
-      font-size: 1.6rem;
-      line-height: 1;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: background 0.2s, color 0.2s;
+      z-index: 6;
     }
 
-    .lb-close-btn:hover {
-      background: rgba(201, 168, 76, 0.2);
+    .lb-close-btn {
+      right: 20px;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .lb-zoom-btn {
+      right: 68px;
+    }
+
+    .lb-close-btn:hover,
+    .lb-zoom-btn:hover {
+      background: rgba(201, 168, 76, 0.22);
       color: #C9A84C;
     }
 
     .lb-caption {
-      margin-top: 18px;
+      margin-top: 16px;
       text-align: center;
     }
 
     .lb-caption .lb-event-name {
       font-family: 'Playfair Display', serif;
       color: #F5F0E8;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       margin-bottom: 4px;
     }
@@ -775,18 +908,17 @@
     .lb-caption .lb-counter {
       font-family: 'Lato', sans-serif;
       color: rgba(201, 168, 76, 0.7);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       font-weight: 600;
     }
 
-    /* Filmstrip thumbnails */
     .lb-strip {
       display: flex;
       gap: 6px;
       margin-top: 14px;
-      max-width: min(90vw, 700px);
+      max-width: min(92vw, 760px);
       overflow-x: auto;
       padding-bottom: 4px;
       scrollbar-width: thin;
@@ -811,7 +943,7 @@
       cursor: pointer;
       border: 2px solid transparent;
       transition: border-color 0.2s, opacity 0.2s;
-      opacity: 0.55;
+      opacity: 0.5;
     }
 
     .lb-strip-thumb img {
@@ -830,68 +962,23 @@
       opacity: 0.85;
     }
 
-    /* "All Work" masonry — CSS columns */
-    .all-work-masonry {
-      columns: 3;
-      column-gap: 8px;
-    }
-
-    @media (max-width: 900px) {
-      .all-work-masonry {
-        columns: 2;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .all-work-masonry {
-        columns: 1;
-      }
-    }
-
-    .all-work-masonry .mitem {
-      break-inside: avoid;
-      margin-bottom: 8px;
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      display: block;
-    }
-
-    .all-work-masonry .mitem img {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
-      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .all-work-masonry .mitem:hover img {
-      transform: scale(1.04);
-    }
-
-    .all-work-masonry .mitem .mitem-label {
+    .lb-hint {
       position: absolute;
-      bottom: 0;
+      bottom: 14px;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(26, 18, 9, 0.82), transparent);
-      padding: 24px 12px 10px;
-      opacity: 0;
-      transition: opacity 0.3s;
-      border-radius: 0 0 10px 10px;
-    }
-
-    .all-work-masonry .mitem:hover .mitem-label {
-      opacity: 1;
-    }
-
-    .all-work-masonry .mitem .mitem-label span {
+      text-align: center;
       font-family: 'Lato', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
+      font-size: 0.62rem;
       letter-spacing: 0.1em;
-      color: #DFC07A;
+      text-transform: uppercase;
+      color: rgba(245, 240, 232, 0.3);
+    }
+
+    @media (max-width: 640px) {
+      .lb-hint {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -1166,7 +1253,8 @@
 
 
   <!-- ═══════════════════════════════════════════
-     PORTFOLIO SECTION — REDESIGNED WITH REAL CLIENT PHOTOS
+     PORTFOLIO SECTION — PREMIUM PINTEREST GALLERY
+     (all images rendered dynamically from eventData)
 ════════════════════════════════════════════ -->
   <section id="portfolio" class="py-20 md:py-32 bg-cream">
     <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16">
@@ -1196,572 +1284,22 @@
         </div>
       </div>
 
-      <!-- Event Tab Navigation -->
-      <div class="flex flex-wrap gap-2 mb-10 reveal" id="eventTabs">
-        <button class="event-tab active" onclick="switchEvent(this, 'all')" data-event="all">
-          All Work <span class="tab-count">41</span>
-        </button>
-        <button class="event-tab" onclick="switchEvent(this, 'abhishek')" data-event="abhishek">
-          Abhishek Kapoor Wedding <span class="tab-count">13</span>
-        </button>
-        <button class="event-tab" onclick="switchEvent(this, 'lemontree')" data-event="lemontree">
-          Lemon Tree Event <span class="tab-count">15</span>
-        </button>
-        <button class="event-tab" onclick="switchEvent(this, 'vipransh')" data-event="vipransh">
-          Vipransh &amp; Anjali <span class="tab-count">12</span>
-        </button>
-        <button class="event-tab" onclick="switchEvent(this, 'deepak')" data-event="deepak">
-          Deepak's Event <span class="tab-count">1</span>
-        </button>
+      <!-- Event Tab Navigation (counts filled in automatically by JS) -->
+      <div class="flex flex-wrap gap-2 mb-8 reveal" id="eventTabs"></div>
+
+      <!-- Optional header strip for the active single event -->
+      <div id="eventHeaderHost"></div>
+
+      <!-- Gallery -->
+      <div id="galleryWrap" class="reveal">
+        <div class="pin-masonry" id="pinMasonry"></div>
       </div>
 
-      <!-- ── ALL WORK panel (masonry) ── -->
-      <div class="event-panel active" id="panel-all">
-        <div class="all-work-masonry">
-
-          <!-- Abhishek Kapoor Wedding photos -->
-          <div class="mitem" onclick="openLB('abhishek', 0)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 1)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0151.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 2)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9867.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 3)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0156.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 4)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9970.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-
-          <!-- Lemon Tree photos -->
-          <div class="mitem" onclick="openLB('lemontree', 0)">
-            <img src="images/Lemon Tree - 1/IMG_7147.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 1)">
-            <img src="images/Lemon Tree - 1/DPP_8646.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 2)">
-            <img src="images/Lemon Tree - 1/IMG_7180.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 3)">
-            <img src="images/Lemon Tree - 1/IMG_7209.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 4)">
-            <img src="images/Lemon Tree - 1/DPP_9108.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 5)">
-            <img src="images/Lemon Tree - 1/IMG_7234.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-
-          <!-- Vipransh & Anjali photos -->
-          <div class="mitem" onclick="openLB('vipransh', 0)">
-            <img src="images/Vipransh and Anjali - 1/0M1A7694.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 1)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8209.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 2)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8122.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 3)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8447.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 4)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8158.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 5)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8462.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 6)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8740.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-
-          <!-- Abhishek remaining -->
-          <div class="mitem" onclick="openLB('abhishek', 5)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0213.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 6)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9836.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-
-          <!-- Lemon Tree remaining -->
-          <div class="mitem" onclick="openLB('lemontree', 6)">
-            <img src="images/Lemon Tree - 1/IMG_7253.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 7)">
-            <img src="images/Lemon Tree - 1/IMG_7307.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 8)">
-            <img src="images/Lemon Tree - 1/IMG_7350.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-
-          <!-- Deepak -->
-          <div class="mitem" onclick="openLB('deepak', 0)">
-            <img src="images/Deepak - 1 /DSC01630.jpg" alt="Deepak Event" loading="lazy">
-            <div class="mitem-label"><span>Deepak's Event</span></div>
-          </div>
-
-          <!-- More Vipransh -->
-          <div class="mitem" onclick="openLB('vipransh', 7)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8545.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 8)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8635.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-
-          <!-- More Abhishek -->
-          <div class="mitem" onclick="openLB('abhishek', 7)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9842.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 8)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9853.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-
-          <!-- More Lemon Tree -->
-          <div class="mitem" onclick="openLB('lemontree', 9)">
-            <img src="images/Lemon Tree - 1/IMG_7358.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 10)">
-            <img src="images/Lemon Tree - 1/IMG_7487.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-
-          <!-- Final Abhishek + Vipransh -->
-          <div class="mitem" onclick="openLB('abhishek', 9)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9875.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 9)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8197.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 10)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9955.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 10)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8558.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 11)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9992.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 11)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8664.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 12)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9999.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 11)">
-            <img src="images/Lemon Tree - 1/IMG_7162.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 12)">
-            <img src="images/Lemon Tree - 1/IMG_7176.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 13)">
-            <img src="images/Lemon Tree - 1/IMG_7192.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('lemontree', 14)">
-            <img src="images/Lemon Tree - 1/IMG_7198.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="mitem-label"><span>Lemon Tree Event</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('vipransh', 3)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8209.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="mitem-label"><span>Vipransh &amp; Anjali</span></div>
-          </div>
-          <div class="mitem" onclick="openLB('abhishek', 0)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="mitem-label"><span>Abhishek Kapoor Wedding</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── ABHISHEK KAPOOR WEDDING panel ── -->
-      <div class="event-panel" id="panel-abhishek">
-        <div class="event-header">
-          <div class="event-header-info">
-            <h3>Abhishek Kapoor Wedding</h3>
-            <span>Wedding · Delhi NCR</span>
-          </div>
-          <div class="text-right">
-            <div class="event-photo-count">13<small>photos</small></div>
-          </div>
-        </div>
-        <div class="photo-grid photo-grid-mixed">
-          <div class="photo-cell landscape" onclick="openLB('abhishek', 0)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 1)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0151.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 2)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0156.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('abhishek', 3)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9867.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 4)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9836.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 5)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9842.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 6)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9853.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 7)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9875.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 8)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9955.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('abhishek', 9)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9970.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 10)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9992.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 11)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_9999.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('abhishek', 12)">
-            <img src="images/Abhishek Kapoor Wedding - 1/IMG_0213.jpg" alt="Abhishek Kapoor Wedding" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── LEMON TREE panel ── -->
-      <div class="event-panel" id="panel-lemontree">
-        <div class="event-header">
-          <div class="event-header-info">
-            <h3>Lemon Tree Event</h3>
-            <span>Corporate &amp; Celebration · Delhi NCR</span>
-          </div>
-          <div class="text-right">
-            <div class="event-photo-count">15<small>photos</small></div>
-          </div>
-        </div>
-        <div class="photo-grid photo-grid-landscape">
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 0)">
-            <img src="images/Lemon Tree - 1/IMG_7147.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 1)">
-            <img src="images/Lemon Tree - 1/DPP_8646.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 2)">
-            <img src="images/Lemon Tree - 1/IMG_7162.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 3)">
-            <img src="images/Lemon Tree - 1/IMG_7176.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 4)">
-            <img src="images/Lemon Tree - 1/IMG_7180.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 5)">
-            <img src="images/Lemon Tree - 1/IMG_7192.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 6)">
-            <img src="images/Lemon Tree - 1/IMG_7198.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 7)">
-            <img src="images/Lemon Tree - 1/IMG_7209.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 8)">
-            <img src="images/Lemon Tree - 1/IMG_7234.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 9)">
-            <img src="images/Lemon Tree - 1/IMG_7253.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 10)">
-            <img src="images/Lemon Tree - 1/IMG_7307.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 11)">
-            <img src="images/Lemon Tree - 1/IMG_7350.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 12)">
-            <img src="images/Lemon Tree - 1/IMG_7358.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 13)">
-            <img src="images/Lemon Tree - 1/IMG_7487.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('lemontree', 14)">
-            <img src="images/Lemon Tree - 1/DPP_9108.jpg" alt="Lemon Tree Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── VIPRANSH & ANJALI panel ── -->
-      <div class="event-panel" id="panel-vipransh">
-        <div class="event-header">
-          <div class="event-header-info">
-            <h3>Vipransh &amp; Anjali</h3>
-            <span>Wedding · Delhi NCR</span>
-          </div>
-          <div class="text-right">
-            <div class="event-photo-count">12<small>photos</small></div>
-          </div>
-        </div>
-        <div class="photo-grid photo-grid-mixed">
-          <div class="photo-cell portrait" onclick="openLB('vipransh', 0)">
-            <img src="images/Vipransh and Anjali - 1/0M1A7694.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('vipransh', 1)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8122.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('vipransh', 2)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8158.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('vipransh', 3)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8197.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('vipransh', 4)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8209.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('vipransh', 5)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8447.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('vipransh', 6)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8462.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('vipransh', 7)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8545.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('vipransh', 8)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8558.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell portrait" onclick="openLB('vipransh', 9)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8635.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('vipransh', 10)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8664.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-          <div class="photo-cell landscape" onclick="openLB('vipransh', 11)">
-            <img src="images/Vipransh and Anjali - 1/0M1A8740.jpg" alt="Vipransh & Anjali" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── DEEPAK panel ── -->
-      <div class="event-panel" id="panel-deepak">
-        <div class="event-header">
-          <div class="event-header-info">
-            <h3>Deepak's Event</h3>
-            <span>Event Coverage · Delhi NCR</span>
-          </div>
-          <div class="text-right">
-            <div class="event-photo-count">1<small>photo</small></div>
-          </div>
-        </div>
-        <div class="photo-grid photo-grid-single">
-          <div class="photo-cell landscape" style="aspect-ratio: 3/2; max-height: 500px;" onclick="openLB('deepak', 0)">
-            <img src="images/Deepak - 1 /DSC01630.jpg" alt="Deepak Event" loading="lazy">
-            <div class="photo-overlay"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg></div>
-          </div>
-        </div>
-      </div>
+      <!-- See more / see less -->
+      <div class="see-more-wrap" id="seeMoreWrap"></div>
 
       <!-- CTA below portfolio -->
-      <div class="mt-12 text-center reveal">
+      <div class="mt-14 text-center reveal">
         <p class="font-body text-muted text-sm mb-5">Want to see more from a specific event?</p>
         <a href="#contact" class="btn-dark">Request Full Gallery</a>
       </div>
@@ -1770,6 +1308,12 @@
 
   <!-- PORTFOLIO LIGHTBOX -->
   <div id="portfolioLightbox" role="dialog" aria-modal="true" aria-label="Photo gallery">
+    <button class="lb-zoom-btn" onclick="toggleZoom()" aria-label="Zoom photo">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m-3-3h6" />
+      </svg>
+    </button>
     <button class="lb-close-btn" onclick="closeLightbox()" aria-label="Close">&times;</button>
     <div class="lb-img-wrap">
       <button class="lb-nav-btn prev" onclick="lbNav(-1)" aria-label="Previous photo">
@@ -1777,12 +1321,15 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
-      <img id="lbMainImg" src="" alt="Gallery photo">
+      <div class="lb-stage" id="lbStage">
+        <img id="lbMainImg" src="" alt="Gallery photo">
+      </div>
       <button class="lb-nav-btn next" onclick="lbNav(1)" aria-label="Next photo">
         <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </button>
+      <div class="lb-hint">Swipe or use arrow keys · Click photo to zoom</div>
     </div>
     <div class="lb-caption">
       <div class="lb-event-name" id="lbEventName"></div>
@@ -2469,18 +2016,15 @@
     }, { threshold: 0.06 });
     document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-    // ── PORTFOLIO: Event Tab Switching ──
-    function switchEvent(btn, eventKey) {
-      document.querySelectorAll('.event-tab').forEach(t => t.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.event-panel').forEach(p => p.classList.remove('active'));
-      document.getElementById('panel-' + eventKey).classList.add('active');
-    }
-
-    // ── PORTFOLIO LIGHTBOX ──
+    // ═══════════════════════════════════════════
+    // PORTFOLIO DATA — single source of truth.
+    // Add/remove photos here; every UI piece (tabs,
+    // counts, grid, lightbox) is generated from this.
+    // ═══════════════════════════════════════════
     const eventData = {
       abhishek: {
         name: 'Abhishek Kapoor Wedding',
+        category: 'Wedding · Delhi NCR',
         photos: [
           'images/Abhishek Kapoor Wedding - 1/IMG_9767.jpg',
           'images/Abhishek Kapoor Wedding - 1/IMG_0151.jpg',
@@ -2499,6 +2043,7 @@
       },
       lemontree: {
         name: 'Lemon Tree Event',
+        category: 'Corporate & Celebration · Delhi NCR',
         photos: [
           'images/Lemon Tree - 1/IMG_7147.jpg',
           'images/Lemon Tree - 1/DPP_8646.jpg',
@@ -2519,6 +2064,7 @@
       },
       vipransh: {
         name: 'Vipransh & Anjali',
+        category: 'Wedding · Delhi NCR',
         photos: [
           'images/Vipransh and Anjali - 1/0M1A7694.jpg',
           'images/Vipransh and Anjali - 1/0M1A8122.jpg',
@@ -2536,61 +2082,215 @@
       },
       deepak: {
         name: "Deepak's Event",
+        category: 'Event Coverage · Delhi NCR',
         photos: [
           'images/Deepak - 1 /DSC01630.jpg',
         ]
       }
     };
 
+    // ── BUILD FLATTENED "ALL WORK" LIST (tagged with source event) ──
+    const allPhotos = [];
+    Object.keys(eventData).forEach(key => {
+      eventData[key].photos.forEach((src, i) => {
+        allPhotos.push({ event: key, idx: i, src });
+      });
+    });
+
+    const PAGE_SIZE = 15;
+    let currentEvent = 'all';
+    let shownCount = PAGE_SIZE;
+
+    // ── TABS ──
+    const eventTabsHost = document.getElementById('eventTabs');
+    function buildTabs() {
+      let html = `<button class="event-tab active" data-event="all" onclick="switchEvent('all', this)">
+        All Work <span class="tab-count">${allPhotos.length}</span></button>`;
+      Object.keys(eventData).forEach(key => {
+        const ev = eventData[key];
+        html += `<button class="event-tab" data-event="${key}" onclick="switchEvent('${key}', this)">
+          ${ev.name} <span class="tab-count">${ev.photos.length}</span></button>`;
+      });
+      eventTabsHost.innerHTML = html;
+    }
+
+    // ── EVENT HEADER (shown only for single-event view) ──
+    const headerHost = document.getElementById('eventHeaderHost');
+    function buildHeader() {
+      if (currentEvent === 'all') { headerHost.innerHTML = ''; return; }
+      const ev = eventData[currentEvent];
+      headerHost.innerHTML = `
+        <div class="event-header">
+          <div class="event-header-info">
+            <h3>${ev.name}</h3>
+            <span>${ev.category}</span>
+          </div>
+          <div class="text-right">
+            <div class="event-photo-count">${ev.photos.length}<small>${ev.photos.length === 1 ? 'photo' : 'photos'}</small></div>
+          </div>
+        </div>`;
+    }
+
+    // ── GRID RENDER ──
+    const masonryHost = document.getElementById('pinMasonry');
+    const seeMoreHost = document.getElementById('seeMoreWrap');
+    const galleryWrap = document.getElementById('galleryWrap');
+
+    function getActiveList() {
+      return currentEvent === 'all'
+        ? allPhotos
+        : eventData[currentEvent].photos.map((src, i) => ({ event: currentEvent, idx: i, src }));
+    }
+
+    function svgIcon() {
+      return `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>`;
+    }
+
+    function renderGrid() {
+      const list = getActiveList();
+      const visible = list.slice(0, shownCount);
+      masonryHost.classList.toggle('no-header', currentEvent === 'all');
+
+      masonryHost.innerHTML = visible.map((item, i) => {
+        const label = currentEvent === 'all' ? eventData[item.event].name : eventData[item.event].name;
+        const delay = (i % PAGE_SIZE) * 0.04;
+        return `<div class="pin-item" style="animation-delay:${delay}s" onclick="openLB('${item.event}', ${item.idx})">
+          <img src="${item.src}" alt="${label}" loading="lazy">
+          <div class="pin-overlay">
+            <div class="pin-zoom-icon">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg>
+            </div>
+            <span class="pin-label">${label}</span>
+          </div>
+        </div>`;
+      }).join('');
+
+      buildSeeMore(list.length);
+    }
+
+    function buildSeeMore(total) {
+      seeMoreHost.innerHTML = '';
+      if (total > PAGE_SIZE) {
+        if (shownCount < total) {
+          seeMoreHost.innerHTML = `<button class="see-more-btn" onclick="seeMore()">
+            See More Photos (${total - shownCount} left)
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>`;
+        } else {
+          seeMoreHost.innerHTML = `<button class="see-more-btn is-less" onclick="seeLess()">
+            See Less
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>`;
+        }
+      }
+    }
+
+    function seeMore() {
+      shownCount = Math.min(shownCount + PAGE_SIZE, getActiveList().length);
+      renderGrid();
+    }
+    function seeLess() {
+      shownCount = PAGE_SIZE;
+      renderGrid();
+      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function switchEvent(key, btn) {
+      if (key === currentEvent) return;
+      currentEvent = key;
+      shownCount = PAGE_SIZE;
+      document.querySelectorAll('.event-tab').forEach(t => t.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      galleryWrap.classList.add('switching');
+      setTimeout(() => {
+        buildHeader();
+        renderGrid();
+        galleryWrap.classList.remove('switching');
+      }, 180);
+    }
+
+    buildTabs();
+    buildHeader();
+    renderGrid();
+
+    // ── LIGHTBOX ──
     let lbActive = null;
     let lbIdx = 0;
+    let lbZoomed = false;
 
     function openLB(eventKey, idx) {
       lbActive = eventKey;
       lbIdx = idx;
+      lbZoomed = false;
       const lb = document.getElementById('portfolioLightbox');
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
       renderLB();
     }
 
-    function renderLB() {
+    function renderLB(direction) {
       const event = eventData[lbActive];
       const img = document.getElementById('lbMainImg');
-      img.src = event.photos[lbIdx];
-      img.alt = event.name;
-      document.getElementById('lbEventName').textContent = event.name;
-      document.getElementById('lbCounter').textContent = (lbIdx + 1) + ' / ' + event.photos.length + ' photos';
+      img.classList.remove('zoomed', 'sliding-left', 'sliding-right');
+      lbZoomed = false;
 
-      // Filmstrip
-      const strip = document.getElementById('lbStrip');
-      strip.innerHTML = '';
-      event.photos.forEach((src, i) => {
-        const thumb = document.createElement('div');
-        thumb.className = 'lb-strip-thumb' + (i === lbIdx ? ' active' : '');
-        thumb.onclick = () => { lbIdx = i; renderLB(); };
-        const thumbImg = document.createElement('img');
-        thumbImg.src = src;
-        thumbImg.alt = '';
-        thumb.appendChild(thumbImg);
-        strip.appendChild(thumb);
-      });
+      const apply = () => {
+        img.src = event.photos[lbIdx];
+        img.alt = event.name;
+        document.getElementById('lbEventName').textContent = event.name;
+        document.getElementById('lbCounter').textContent = (lbIdx + 1) + ' / ' + event.photos.length + ' photos';
 
-      // Scroll active thumb into view
-      const activThumb = strip.children[lbIdx];
-      if (activThumb) activThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        const strip = document.getElementById('lbStrip');
+        strip.innerHTML = '';
+        event.photos.forEach((src, i) => {
+          const thumb = document.createElement('div');
+          thumb.className = 'lb-strip-thumb' + (i === lbIdx ? ' active' : '');
+          thumb.onclick = () => { lbIdx = i; renderLB(); };
+          const thumbImg = document.createElement('img');
+          thumbImg.src = src;
+          thumbImg.alt = '';
+          thumb.appendChild(thumbImg);
+          strip.appendChild(thumb);
+        });
+        const activeThumb = strip.children[lbIdx];
+        if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      };
+
+      if (direction) {
+        img.classList.add(direction === 1 ? 'sliding-left' : 'sliding-right');
+        setTimeout(apply, 120);
+      } else {
+        apply();
+      }
     }
-                                                    
+
     function lbNav(dir) {
       const total = eventData[lbActive].photos.length;
       lbIdx = (lbIdx + dir + total) % total;
-      renderLB();
+      renderLB(dir);
     }
 
     function closeLightbox() {
       document.getElementById('portfolioLightbox').classList.remove('open');
+      document.getElementById('lbMainImg').classList.remove('zoomed');
+      lbZoomed = false;
       document.body.style.overflow = '';
     }
+
+    function toggleZoom() {
+      const img = document.getElementById('lbMainImg');
+      lbZoomed = !lbZoomed;
+      img.classList.toggle('zoomed', lbZoomed);
+      img.style.transform = lbZoomed ? 'scale(1.9)' : '';
+    }
+
+    document.getElementById('lbMainImg').addEventListener('click', toggleZoom);
 
     // keyboard nav
     document.addEventListener('keydown', e => {
@@ -2604,6 +2304,45 @@
     document.getElementById('portfolioLightbox').addEventListener('click', function (e) {
       if (e.target === this) closeLightbox();
     });
+
+    // ── SWIPE SUPPORT (mobile) ──
+    (function () {
+      const wrap = document.querySelector('#portfolioLightbox .lb-img-wrap');
+      let startX = 0, startY = 0, dragging = false;
+      wrap.addEventListener('touchstart', e => {
+        if (lbZoomed) return;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        dragging = true;
+      }, { passive: true });
+      wrap.addEventListener('touchend', e => {
+        if (!dragging || lbZoomed) { dragging = false; return; }
+        dragging = false;
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const dx = endX - startX;
+        const dy = endY - startY;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < 0) lbNav(1); else lbNav(-1);
+        }
+      }, { passive: true });
+    })();
+
+    // ── COOKIES ──
+    function checkCookie() {
+      if (!localStorage.getItem('dlux_cookie_consent')) {
+        setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1200);
+      }
+    }
+    function acceptCookies() {
+      localStorage.setItem('dlux_cookie_consent', 'accepted');
+      document.getElementById('cookieBanner').classList.remove('show');
+    }
+    function rejectCookies() {
+      localStorage.setItem('dlux_cookie_consent', 'rejected');
+      document.getElementById('cookieBanner').classList.remove('show');
+    }
+    checkCookie();
 
     // ── MULTI-STEP FORM ──
     let curStep = 0;
@@ -2671,22 +2410,6 @@
       document.getElementById('formDone').classList.remove('hidden');
       window.open(waUrl, '_blank');
     }
-
-    // ── COOKIES ──
-    function checkCookie() {
-      if (!localStorage.getItem('dlux_cookie_consent')) {
-        setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1200);
-      }
-    }
-    function acceptCookies() {
-      localStorage.setItem('dlux_cookie_consent', 'accepted');
-      document.getElementById('cookieBanner').classList.remove('show');
-    }
-    function rejectCookies() {
-      localStorage.setItem('dlux_cookie_consent', 'rejected');
-      document.getElementById('cookieBanner').classList.remove('show');
-    }
-    checkCookie();
   </script>
 
 </body>
